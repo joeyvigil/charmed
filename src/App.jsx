@@ -6,14 +6,18 @@ import Login from './views/Login.jsx'
 import './App.css'
 
 function App() {
+  const navigate = useNavigate();
   
 
   return (
+    
     <>
       <div>
         <img src="Ahri_Charm.png" alt="" />
       </div>
       <h1>Charmed.lol</h1>
+      <button onClick={() => navigate('/')}>Home</button>
+      <button onClick={() => navigate('/login')}>Login</button>
 
       
       <Routes>
