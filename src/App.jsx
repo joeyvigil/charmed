@@ -14,11 +14,14 @@ function App() {
         <img src="Ahri_Charm.png" alt="" />
       </div>
       <h1>Charmed.lol</h1>
+
       
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+
+      
     </>
   )
 }
