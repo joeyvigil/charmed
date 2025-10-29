@@ -1,7 +1,106 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* https://catppuccin.com/palette/   Latte*/
+:root {
+  --Rosewater: #dc8a78;
+  --Pink: #ea76cb;
+  --Mauve: #8839ef;
+  --Maroon: #e64553;
+  --Peach: #fe640b;
+  --Yellow: #df8e1d;
+  --Green: #40a02b;
+  --Teal: #179299;
+  --Sapphire: #209fb5;
+  --Lavender: #7287fd;
+  --Base0: #eff1f5;
+  --Base1: #ccd0da;
+  --Base2: #acb0be;
+  --Base3: #8c8fa1;
+  --Base4: #6c6f85;
+  --Base5: #4c4f69;
+  --Base6: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  /* border: 1px solid goldenrod; */
+}
+
+.cursive-font {
+  font-family: "Borel", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.title-font {
+  font-family: 'Wellfleet', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mynavbar {
+  margin-bottom: 20px;
+  background-color: var(--Base6);
+  color: var(--Base0);
+}
+
+.navbar {
+  color: var(--Base0);
+  padding: 25px 20px 10px 20px; 
+  
+}
+
+.navbar-brand {
+  color: var(--Pink);
+  animation: flicker 2s infinite alternate;
+  font-size: 24px;
+}
+
+.navbar-brand:hover {
+  color: var(--Maroon);
+  text-decoration: none; 
+}
+
+a {
+  color: var(--Lavender);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:hover {
+  color: var(--Maroon);
+  text-decoration: none;
+}
+
+.btn {
+  color: var(--Base0);
+  border-color: var(--Base0);
+}
+
+.btn:hover {
+  background-color: var(--Green);
+  border-color: var(--Teal);
+}
+
+.highlight {
+  color: var(--Pink);
+  animation: flicker 10s infinite alternate;
+}
+
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px var(--Pink),
+      0 0 11px var(--Pink),
+      0 0 19px var(--Pink);
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+  }
 }
 

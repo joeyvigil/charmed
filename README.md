@@ -3,9 +3,7 @@ League of legends dating
 
 https://joeyvigil.github.io/charmed/
 
-www.charmed.lol
-http://www.charmed.lol/
-
+[www.charmed.lol](https://www.charmed.lol/)
 
 ## API
 This project uses the [Riot Games API](https://developer.riotgames.com/).
@@ -54,6 +52,20 @@ This project uses the [Riot Games API](https://developer.riotgames.com/).
     - manage users
     - view site analytics
 
+- About Us ℹ️
+    - information about the site
+    - contact information
+  
+- FAQ ❓
+    - frequently asked questions
+    - 
+- Terms of Service 📜
+    - legal information about using the site
+
+- Privacy Policy 🔒
+    - information about data collection and usage
+
+
 ## Riot API requests + responses
 
 ### Get account by Riot ID 'ACCOUNTS-V1'
@@ -78,6 +90,14 @@ response (200):
 }
 ```
 
+### more to come...
 
+## Tech Stack
+- Frontend: React, Bootstrap, CSS, HTML, JavaScript, JSX, react-router-dom
+- Backend: Flask, SQLAlchemy, Python, flask-cors, flask-marshmallow, marshmallow-sqlalchemy, requests, flask-limiter, flask-caching, python-jose, flask-swagger, flask-swagger-ui, gunicorn, Werkzeug
+- Database: PostgreSQL
+- Hosting: GitHub Pages (frontend), porkbun (domain), Render web service & PostgreSQL (backend)
+- APIs: Riot Games API
+- Other Tools: Postman, Git, GitHub
 
 
