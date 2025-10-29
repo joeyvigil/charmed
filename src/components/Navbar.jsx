@@ -10,9 +10,9 @@ const Navbar = ({user}) => {
     <div className="mynavbar">
         <div className="container-fluid">
           <nav className="navbar">
-            
-            <Link to={'/'} className="navbar-brand cursive-font flicker">
-              <img src="charm.png" alt="Logo" className="d-inline-block align-text-top" /> charmed .lol
+
+            <Link to={'/'} className="navbar-brand cursive-font">
+              <img src="charm.png" alt="Logo" className="d-inline-block align-text-top image-glow" /> charmed .lol
             </Link>
 
             <div className="d-flex">

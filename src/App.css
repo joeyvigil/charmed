@@ -42,15 +42,40 @@
   font-style: normal;
 }
 
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px var(--Pink),
+      0 0 11px var(--Pink),
+      0 0 19px var(--Pink);
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+  }
+}
+
+@keyframes image-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    filter: drop-shadow(0 0 4px var(--Maroon))
+           drop-shadow(0 0 11px var(--Maroon))
+           drop-shadow(0 0 19px var(--Maroon));
+  }
+  20%, 24%, 55% {
+    filter: none;
+  }
+}
+
+
 .mynavbar {
   margin-bottom: 20px;
-  background-color: var(--Base6);
+  background-color: black;
   color: var(--Base0);
 }
 
 .navbar {
   color: var(--Base0);
   padding: 25px 20px 10px 20px; 
+
   
 }
 
@@ -79,6 +104,8 @@ a:hover {
 .btn {
   color: var(--Base0);
   border-color: var(--Base0);
+  background-color: var(--Sapphire);
+  height: 40px;
 }
 
 .btn:hover {
@@ -91,16 +118,14 @@ a:hover {
   animation: flicker 10s infinite alternate;
 }
 
-
-@keyframes flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    text-shadow:
-      0 0 4px var(--Pink),
-      0 0 11px var(--Pink),
-      0 0 19px var(--Pink);
-  }
-  20%, 24%, 55% {       
-    text-shadow: none;
-  }
+h4 {
+  font-size: 24px;
 }
+
+.image-glow {
+  animation: image-flicker 2s infinite alternate;
+}
+
+
+
 

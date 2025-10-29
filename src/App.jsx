@@ -14,7 +14,7 @@ function App() {
   return (
     
     <>
-      <Navbar user={"Amy"} />
+      <Navbar user={"Evelyn"} />
 
       <div>
         <img src="Ahri_Charm.png" alt="" />
