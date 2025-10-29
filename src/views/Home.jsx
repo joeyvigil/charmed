@@ -2,7 +2,15 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>Home is where the heart is</div>
+
+    <>
+
+      <video autoPlay muted loop id="myVideo">
+        <source src="rakan.mp4" type="video/mp4" />
+      </video>
+
+    </>
+
   )
 }
 
