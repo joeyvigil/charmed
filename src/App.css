@@ -17,6 +17,7 @@
   --Base4: #6c6f85;
   --Base5: #4c4f69;
   --Base6: #111;
+  --base7: #000;
 }
 
 * {
@@ -69,16 +70,17 @@
 
 
 .mynavbar {
-  background-color: black;
+  /* position: fixed;
+  background-color: rgba(0, 0, 0, .95); */
+  background-color: var(--base7);
   color: var(--Base0);
   width: 100%;
+  z-index: 99;
 }
 
 .navbar {
   color: var(--Base0);
   padding: 25px 20px 10px 20px; 
-
-  
 }
 
 .navbar-brand {

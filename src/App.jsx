@@ -31,8 +31,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="messages" element={<Messages />} />
+        <Route path="/admin/" element={<Admin />} />
+        <Route path="/messages" element={<Messages />} />
         <Route path="/login" element={<Login />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="*" element={<NotFound />} />
