@@ -28,7 +28,7 @@ function App() {
       <Navbar user={"Evelyn"} />
 
 
-      <div style={{"min-height": "91vh"}}>
+      {/* <div style={{"min-height": "91vh"}}> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin/" element={<Admin />} />
@@ -41,7 +41,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/update" element={<Update />} />
       </Routes>
-      </div>
+      {/* </div> */}
       <Footer />
     </>
   )
