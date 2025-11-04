@@ -192,10 +192,8 @@ footer h5 {
 }
 
 .container-height {
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  padding: 40px 0;
 }
 
 .background {
