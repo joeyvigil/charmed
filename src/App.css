@@ -33,16 +33,16 @@
   /* border: 1px solid goldenrod; */
 }
 
-/* body {
-  background-image: url(back1.webp);
+body {
+  background-image: url("/back1.webp");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-} */
+}
 
 .background {
-  background-image: url(back1.webp);
+  background-image: url("/back1.webp");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
