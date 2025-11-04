@@ -14,7 +14,7 @@ const Login = () => {
     };
 
   return (
-    <div className='background'>
+    <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
     <div className="container container-height">
             <div className="small-container">
                 <h1 className="text-center">Welcome</h1>
