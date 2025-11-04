@@ -16,6 +16,7 @@ import Settings from './views/Settings.jsx'
 import Update from './views/Update.jsx'
 
 import './App.css'
+import Navbar2 from './components/Navbar2.jsx'
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
   return (
     
     <>
-      <Navbar user={"Evelyn"} />
+      {/* <Navbar user={"Evelynn"} /> */}
+      <Navbar2 />
 
 
       {/* <div style={{"min-height": "91vh"}}> */}
