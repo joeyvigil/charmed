@@ -11,7 +11,7 @@ const Navbar = ({user}) => {
       <nav className="navbar navbar-expand-lg  ">
         <div className="container-fluid ">
 
-          <Link to={'/'} className="navbar-brand cursive-font">
+          <Link to={'/#/'} className="navbar-brand cursive-font">
             <img src="charm.png" alt="Logo" className="d-inline-block align-text-top image-glow" /> charmed .lol
           </Link>
 
@@ -27,35 +27,35 @@ const Navbar = ({user}) => {
                   <li className="nav-item"><h4 className="me-4"> Hello <span className="highlight cursive-font">{user}</span></h4></li>
 
                   <li className="nav-item">
-                    <a className="me-4" href="/profile">profile</a>
+                    <a className="me-4" href="/#/profile">profile</a>
                   </li>
 
                   <li className="nav-item">
-                    <a className="me-4" href="/matches">matches</a>
+                    <a className="me-4" href="/#/matches">matches</a>
                   </li>
 
                   <li className="nav-item">
-                    <a className="me-4" href="/messages">messages</a>
+                    <a className="me-4" href="/#/messages">messages</a>
                   </li>
 
                   <li className="nav-item">
-                    <a className="me-4" href="/settings">settings</a>
+                    <a className="me-4" href="/#/settings">settings</a>
                   </li>
 
                   <li className="nav-item">
-                    <button className="btn me-4" onClick={() => { localStorage.removeItem('token'); navigate('/')}} > Logout </button>
+                    <button className="btn me-4" onClick={() => { localStorage.removeItem('token'); navigate('/#/')}} > Logout </button>
                   </li>
                   
                 </>
               ) : (
                 <>
-                <button className="btn me-2" onClick={() => navigate('/login')}> 
+                <button className="btn me-2" onClick={() => navigate('/#/login')}> 
                   Login
                 </button>
 
                 <span className='me-2'>/</span>
 
-                <button className="btn me-2" onClick={() => navigate('/register')}> 
+                <button className="btn me-2" onClick={() => navigate('/#/register')}> 
                   Register
                 </button>
 
