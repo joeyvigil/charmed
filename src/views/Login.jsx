@@ -17,7 +17,7 @@ const Login = () => {
     <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
     <div className="container container-height">
             <div className="small-container">
-                <h1 className="text-center">Welcome</h1>
+                <h1 className="text-center">Login</h1>
                 <form onSubmit={formSubmit}>
 
                     {/* Email input */}

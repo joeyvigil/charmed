@@ -41,14 +41,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.background {
-  /* background-image: url("./back1.webp"); */
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 90vh;
-}
+
 
 .cursive-font {
   font-family: "Borel", cursive;
@@ -196,10 +189,6 @@ footer h5 {
   border-radius: 10px;
   background-color: rgb(0 0 0 / 0.7);
   color: var(--Base0);
-
-  /* text-align: center; */
-  
-
 }
 
 .container-height {
@@ -208,3 +197,32 @@ footer h5 {
   justify-content: center;
   align-items: center;
 }
+
+.background {
+  /* background-image: url("./back1.webp"); */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  color: var(--Base0);
+  background-color: var(--Base6);
+  border: 1px solid var(--Base3);
+
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder {
+  color: var(--Base2);
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+  outline: none;
+  border: 1px solid var(--Sapphire);
+  box-shadow: 0 0 5px var(--Sapphire);
+  color: var(--Base0);
+  background-color: var(--Base6);
+}
+
