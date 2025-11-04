@@ -8,18 +8,18 @@ const Navbar = ({user}) => {
   return (
     <header>
     <div className="mynavbar">
+      <nav className="navbar navbar-expand-lg  ">
         <div className="container-fluid ">
-          <nav className="navbar navbar-expand-lg">
 
-            <Link to={'/'} className="navbar-brand cursive-font">
-              <img src="charm.png" alt="Logo" className="d-inline-block align-text-top image-glow" /> charmed .lol
-            </Link>
+          <Link to={'/'} className="navbar-brand cursive-font">
+            <img src="charm.png" alt="Logo" className="d-inline-block align-text-top image-glow" /> charmed .lol
+          </Link>
 
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span className='highlight cursive-font'>💞 Menu 💕</span>
+          </button>
 
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul className="navbar-nav d-flex align-items-center ms-auto">
             {/* <div className="d-flex"> */}
               {user ? (
@@ -43,25 +43,33 @@ const Navbar = ({user}) => {
                   </li>
 
                   <li className="nav-item">
-                    <button className="btn" onClick={() => { localStorage.removeItem('token'); navigate('/')}} > Logout </button>
+                    <button className="btn me-4" onClick={() => { localStorage.removeItem('token'); navigate('/')}} > Logout </button>
                   </li>
-                  
-                  
-                  
-                  
-                  
-        
                   
                 </>
               ) : (
-                <button className="btn" onClick={() => navigate('/')}> Home </button>
+                <>
+                <button className="btn me-2" onClick={() => navigate('/login')}> 
+                  Login
+                </button>
+
+                <span className='me-2'>/</span>
+
+                <button className="btn me-2" onClick={() => navigate('/register')}> 
+                  Register
+                </button>
+
+                </>
+
               )}
-          {/* </div> */}
+          
             </ul>
           </div>
 
-        </nav>
         </div>
+        </nav>
+        
+
     </div>
     </header>
 

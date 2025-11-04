@@ -173,3 +173,6 @@ footer h5 {
   color: var(--Teal);
 }
 
+.navbar-toggler {
+  color: var(--Rosewater);
+}
