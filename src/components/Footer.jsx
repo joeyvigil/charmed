@@ -9,7 +9,7 @@ const Footer = () => {
         
         <div className="col mb-3">
           <a
-            href="/"
+            href="/#/"
             className="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
             aria-label="Bootstrap"
           >
@@ -31,27 +31,27 @@ const Footer = () => {
           <h5>Primary</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="/" className="nav-link p-0 text-body-secondary">
+              <a href="/#/" className="nav-link p-0 text-body-secondary">
                 Home
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="/profile" className="nav-link p-0 text-body-secondary">
+              <a href="/#/profile" className="nav-link p-0 text-body-secondary">
                 Profile
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="/matches" className="nav-link p-0 text-body-secondary">
+              <a href="/#/matches" className="nav-link p-0 text-body-secondary">
                 Matches
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="/messages" className="nav-link p-0 text-body-secondary">
+              <a href="/#/messages" className="nav-link p-0 text-body-secondary">
                 Messages
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="/settings" className="nav-link p-0 text-body-secondary">
+              <a href="/#/settings" className="nav-link p-0 text-body-secondary">
                 Settings
               </a>
             </li>
@@ -62,22 +62,22 @@ const Footer = () => {
           <h5>Secondary</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="/admin" className="nav-link p-0 text-body-secondary">
+              <a href="/#/admin" className="nav-link p-0 text-body-secondary">
                 Admin Dashboard
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="/login" className="nav-link p-0 text-body-secondary">
+              <a href="/#/login" className="nav-link p-0 text-body-secondary">
                 Login
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="/register" className="nav-link p-0 text-body-secondary">
+              <a href="/#/register" className="nav-link p-0 text-body-secondary">
                 Register
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="/update" className="nav-link p-0 text-body-secondary">
+              <a href="/#/update" className="nav-link p-0 text-body-secondary">
                 Update
               </a>
             </li>
