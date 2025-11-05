@@ -205,22 +205,29 @@ footer h5 {
   min-height: 90vh;
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="date"] {
   color: var(--Base0);
   background-color: var(--Base6);
   border: 1px solid var(--Base3);
 
 }
 
-input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder {
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder {
   color: var(--Base2);
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus {
   outline: none;
   border: 1px solid var(--Sapphire);
   box-shadow: 0 0 5px var(--Sapphire);
   color: var(--Base0);
   background-color: var(--Base6);
+}
+
+input[role="switch"] {
+  background-color: var(--Pink);
+}
+input[role="switch"]:checked {
+  background-color: var(--Sapphire);
 }
 
