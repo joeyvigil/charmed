@@ -33,15 +33,6 @@
   /* border: 1px solid goldenrod; */
 }
 
-body {
-  /* background-image: url("./back1.webp"); */
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-
 
 .cursive-font {
   font-family: "Borel", cursive;

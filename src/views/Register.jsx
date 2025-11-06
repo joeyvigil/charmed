@@ -15,7 +15,7 @@ const Register = () => {
 
   const formSubmit = async (e) => {
       e.preventDefault();
-      console.log('form: ', email, password);
+      console.log('form: ', first, last, email, password, repeatPassword, gender, birthdate);
       console.log(e);
       return
   };
@@ -108,15 +108,13 @@ const Register = () => {
                       checked={gender === "male"}
                       onChange={() => setGender(gender === "male" ? "female" : "male")}
                     />
-                    <label className="form-check-label" htmlFor="genderSwitch">
-                      <span>{gender === "male" ? "male" : "female"}</span>
-                    </label>
+                    <label className="form-check-label" htmlFor="genderSwitch">{gender}</label>
                   </div>
                     <label className="form-label">Gender</label>
                   </div>
 
                   {/* Birthdate input */}
-                  <div className="mb-4">
+                  <div className="mb-2">
                     <input
                       type="date"
                       className="form-control"

@@ -50,11 +50,6 @@ const Footer = () => {
                 Messages
               </a>
             </li>
-            <li className="nav-item mb-2">
-              <a href="/#/settings" className="nav-link p-0 text-body-secondary">
-                Settings
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -88,18 +83,23 @@ const Footer = () => {
           <h5>Social Media</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-body-secondary">
-                Facebook
-              </a>
-            </li>
-            <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-body-secondary">
+              <a href="https://x.com/SettlersotCosmo" className="nav-link p-0 text-body-secondary">
                 Twitter
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-body-secondary">
+              <a href="https://www.instagram.com/squeakinc.games/" className="nav-link p-0 text-body-secondary">
                 Instagram
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="https://github.com/joeyvigil" className="nav-link p-0 text-body-secondary">
+                Github
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="https://www.linkedin.com/in/joeyvigil/" className="nav-link p-0 text-body-secondary">
+                LinkedIn
               </a>
             </li>
             

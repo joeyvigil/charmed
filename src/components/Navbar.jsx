@@ -39,10 +39,6 @@ const Navbar = ({user}) => {
                   </li>
 
                   <li className="nav-item">
-                    <a className="me-4" href="/#/settings">settings</a>
-                  </li>
-
-                  <li className="nav-item">
                     <button className="btn me-4" onClick={() => { localStorage.removeItem('token'); navigate('/#/')}} > Logout </button>
                   </li>
                   
