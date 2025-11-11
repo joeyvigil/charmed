@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -40,7 +40,7 @@ const Login = () => {
 
   return (
     <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
-    <div className="container container-height">
+        <div className="container container-height">
             <div className="small-container">
                 <h1 className="text-center">Login</h1>
                 <form onSubmit={formSubmit}>

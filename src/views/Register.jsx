@@ -23,22 +23,7 @@ const Register = () => {
             return;
         }
         const register = async () => {
-//           {
-//     "bio": "Competitive gamer and streamer with a passion for RPGs and esports.",
-//     "birthdate": "1996-04-15",
-//     "city": "Los Angeles",
-//     "country": "United States",
-//     "email": "joey@doe.com",
-//     "first_name": "John",
-//     "gender": "Male",
-//     "in_game_name": "ShadowStrike99",
-//     "last_name": "Doe",
-//     "password": "password",
-//     "state": "California",
-//     "tagline": "Leveling up every day.",
-//     "latitude": 100.22,
-//     "longitude": 324.234
-// }
+
 
             const response = await fetch('https://charmed-backend.onrender.com/users', {
                 method: 'POST',

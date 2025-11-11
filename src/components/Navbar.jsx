@@ -26,7 +26,7 @@ const Navbar = ({user}) => {
             {/* <div className="d-flex"> */}
               {user ? (
                 <>
-                  <li className="nav-item"><h4 className="me-4"> Hello <span className="highlight cursive-font">{user}</span></h4></li>
+                  <li className="nav-item"><h4 className="me-4"> Hello <span className="highlight cursive-font">{user.first_name}</span></h4></li>
 
                   <li className="nav-item">
                     <a className="me-4" href="/#/profile">profile</a>
@@ -47,13 +47,13 @@ const Navbar = ({user}) => {
                 </>
               ) : (
                 <>
-                <button className="btn me-2" onClick={() => navigate('/#/login')}> 
+                <button className="btn me-2" onClick={() => navigate('/login')}> 
                   Login
                 </button>
 
                 <span className='me-2'>/</span>
 
-                <button className="btn me-2" onClick={() => navigate('/#/register')}> 
+                <button className="btn me-2" onClick={() => navigate('/register')}> 
                   Register
                 </button>
 

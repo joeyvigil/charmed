@@ -55,20 +55,20 @@ function App() {
   return (
     
     <>
-      <Navbar user={"Evelynn"} />
+      <Navbar user={user} />
 
       {/* <div style={{"min-height": "91vh"}}> */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/admin/" element={<Admin />} />
-        <Route path="/messages" element={<Messages />} />
+        <Route path="/admin/" element={<Admin user={user} />} />
+        <Route path="/messages" element={<Messages user={user} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/matches" element={<Matches />} />
+        <Route path="/matches" element={<Matches user={user} />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile user={user} />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/update" element={<Update />} />
+        <Route path="/settings" element={<Settings user={user} />} />
+        <Route path="/update" element={<Update user={user} />} />
       </Routes>
       {/* </div> */}
       <Footer />
