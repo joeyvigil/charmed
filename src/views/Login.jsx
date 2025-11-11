@@ -12,13 +12,18 @@ const Login = () => {
         console.log('form: ', email, password);
         console.log(e);
         const login = async () => {
-            const response = await fetch('https://charmed-backend.onrender.com/login', {
+
+            const response = await fetch('https://charmed-backend.onrender.com/users/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({
+                    email,
+                    password
+                })
             });
+            
             const data = await response.json();
             if (response.ok) {
                 console.log('Login successful:', data);
