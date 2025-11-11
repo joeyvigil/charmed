@@ -8,9 +8,26 @@ const Login = () => {
 
     const formSubmit = async (e) => {
         e.preventDefault();
+        console.clear();
         console.log('form: ', email, password);
         console.log(e);
-        return
+        const login = async () => {
+            const response = await fetch('https://charmed-backend.onrender.com/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                console.log('Login successful:', data);
+                navigate('/dashboard');
+            } else {
+                console.error('Login failed:', data);
+            }
+        };
+        login();
     };
 
   return (
