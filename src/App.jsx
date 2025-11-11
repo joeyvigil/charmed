@@ -19,7 +19,37 @@ import './App.css'
 
 
 function App() {
+
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
+    useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setUser(null);
+    } else {
+      // Fetch user data with the token
+      const fetchUser = async () => {
+        try {
+          const response = await fetch('https://charmed-backend.onrender.com/users/profile', {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          const data = await response.json();
+          if (response.ok) {
+            setUser(data);
+          } else {
+            console.error('Failed to fetch user data:', data);
+            setUser(null);
+          }
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+          setUser(null);
+        }
+      };
+      fetchUser();
+    }
+  }, [navigate]);
   
 
   return (

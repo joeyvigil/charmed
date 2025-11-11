@@ -27,9 +27,12 @@ const Login = () => {
             const data = await response.json();
             if (response.ok) {
                 console.log('Login successful:', data);
-                navigate('/dashboard');
+                data.token && localStorage.setItem('token', data.token);
+                console.log('Token stored in localStorage', data.token);
+                navigate('/profile');
             } else {
                 console.error('Login failed:', data);
+                alert('Login failed. Please check your credentials and try again.');
             }
         };
         login();

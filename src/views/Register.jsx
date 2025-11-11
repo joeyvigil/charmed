@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
   const navigate = useNavigate();
 
-  const [first, setFirst] = React.useState("");
-  const [last, setLast] = React.useState("");
+  const [first_name, setFirst] = React.useState("");
+  const [last_name, setLast] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [repeatPassword, setRepeatPassword] = React.useState("");
@@ -14,11 +14,66 @@ const Register = () => {
 
 
   const formSubmit = async (e) => {
-      e.preventDefault();
-      console.log('form: ', first, last, email, password, repeatPassword, gender, birthdate);
-      console.log(e);
-      return
-  };
+        e.preventDefault();
+        console.clear();
+        console.log('form: ', email, password);
+        console.log(e);
+        if (password !== repeatPassword) {
+            alert('Passwords do not match. Please try again.');
+            return;
+        }
+        const register = async () => {
+//           {
+//     "bio": "Competitive gamer and streamer with a passion for RPGs and esports.",
+//     "birthdate": "1996-04-15",
+//     "city": "Los Angeles",
+//     "country": "United States",
+//     "email": "joey@doe.com",
+//     "first_name": "John",
+//     "gender": "Male",
+//     "in_game_name": "ShadowStrike99",
+//     "last_name": "Doe",
+//     "password": "password",
+//     "state": "California",
+//     "tagline": "Leveling up every day.",
+//     "latitude": 100.22,
+//     "longitude": 324.234
+// }
+
+            const response = await fetch('https://charmed-backend.onrender.com/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    bio: "",
+                    city: "",
+                    state: "",
+                    country: "",
+                    in_game_name: "",
+                    tagline: "",
+                    latitude: 0,
+                    longitude: 0,
+                    first_name,
+                    last_name,
+                    email,
+                    password,
+                    gender,
+                    birthdate
+                })
+            });
+            
+            const data = await response.json();
+            if (response.ok) {
+                console.log('Registration successful:', data);
+                navigate('/login');
+            } else {
+                console.error('Registration failed:', data);
+                alert('Registration failed. Please check your details and try again.');
+            }
+        };
+        register();
+    };
 
   return (
     <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
@@ -33,7 +88,7 @@ const Register = () => {
                       type="text" 
                       className="form-control" 
                       id="first" 
-                      value={first}
+                      value={first_name}
                       onChange={(e) => setFirst(e.target.value)}
                       placeholder='John' 
                       required 
@@ -47,7 +102,7 @@ const Register = () => {
                       type="text" 
                       className="form-control" 
                       id="last" 
-                      value={last}
+                      value={last_name}
                       onChange={(e) => setLast(e.target.value)}
                       placeholder='Doe' 
                       required 

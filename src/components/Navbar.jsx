@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { use } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Navbar = ({user}) => {
   const navigate = useNavigate();
+
 
   return (
     <header>
