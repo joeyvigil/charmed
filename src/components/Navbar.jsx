@@ -104,17 +104,15 @@ const Navbar = ({user}) => {
                 </>
               ) : (
                 <>
-                  <li className="nav-item"><h4 className="me-4"> <span className="highlight cursive-font">{randomQuote}</span></h4></li>
-                <button className="btn me-2" onClick={() => navigate('/login')}> 
-                  Login
-                </button>
+                  <li className="nav-item"><h5 className="me-4"> <span className="quote-text cursive-font">{randomQuote}</span></h5></li>
+                  
+                  <button className="btn me-4" onClick={() => navigate('/login')}> 
+                    Login
+                  </button>
 
-                <span className='me-2'>/</span>
-
-                <button className="btn me-2" onClick={() => navigate('/register')}> 
-                  Register
-                </button>
-
+                  <button className="btn me-4" onClick={() => navigate('/register')}> 
+                    Register
+                  </button>
                 </>
 
               )}

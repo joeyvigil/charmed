@@ -71,6 +71,24 @@
   }
 }
 
+@keyframes quote-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px var(--Sapphire),
+      0 0 11px var(--Sapphire),
+      0 0 19px var(--Sapphire);
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+  }
+}
+
+.quote-text {
+  font-style: italic;
+  color: var(--Sapphire);
+  animation: quote-flicker 5s infinite alternate;
+}
+
 
 .mynavbar {
   /* position: fixed;
@@ -109,15 +127,19 @@ a:hover {
 }
 
 .btn {
-  color: var(--Base0);
-  border-color: var(--Base0);
-  background-color: var(--Sapphire);
-  height: 40px;
+    border: 1px solid var(--Base0);
+    color: var(--Base0);
+    background: var(--Mauve);
+    box-shadow: 6px 6px 0 var(--Pink);
+    transform: skewX(-15deg);
 }
 
 .btn:hover {
-  background-color: var(--Green);
-  border-color: var(--Teal);
+    border: 1px solid var(--base7);
+    color: var(--base7);
+    background: var(--Pink);
+    box-shadow: 6px 6px 0 var(--Mauve);
+    transform: skewX(-15deg);
 }
 
 .highlight {
