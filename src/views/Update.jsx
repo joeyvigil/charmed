@@ -70,14 +70,14 @@ const Update = ({ user }) => {
 
 
   return (
-    <div className='background' style={{backgroundImage: 'url("back1.webp")'}}> 
+        <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
+        <div className="container ">
+            <div className="row">
 
-        <div className="container container-height">
-          <div className="row mt-4 mb-4">
             {user ? (
               <>
-                <div className="col-12 col-md-6">
-                  <div className="flex-container">
+            <div className="col-12 col-md-6">
+            <div className="flex-container">
 
                     <h1 className="text-center">Update Profile</h1>
                     
@@ -200,8 +200,8 @@ const Update = ({ user }) => {
                   </div>
                 </div>
 
-                <div className="col-12 col-md-6">
-                  <div className="flex-container">
+            <div className="col-12 col-md-6">
+            <div className="flex-container">
                     <h1 className="text-center">Update Profile</h1>
                                           
                     {/* city */}

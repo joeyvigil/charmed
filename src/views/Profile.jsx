@@ -6,10 +6,10 @@ const Profile = ({ user }) => {
 
   return (
     <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
-        <div className="container container-height">
-            <div className="row mt-4 mb-4">
+        <div className="container ">
+            <div className="row">
             <div className="col-12 col-md-6">
-            <div className="small-container">
+            <div className="flex-container">
           {user ? (
             <>
               <h1 className="text-center">
