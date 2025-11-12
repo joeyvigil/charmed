@@ -205,8 +205,7 @@ footer h5 {
 }
 
 .container-height {
-  height: 100vh;
-  padding: 40px 0;
+  padding: .1px 0;
 }
 
 .background {
@@ -218,23 +217,28 @@ footer h5 {
   min-height: 90vh;
 }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="date"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"]  {
   color: var(--Base0);
   background-color: var(--Base6);
   border: 1px solid var(--Base3);
 
 }
 
-input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder {
-  color: var(--Base2);
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder, textarea[id="bio"]::placeholder {
+  color: var(--Base4);
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea[id="bio"]:focus {
   outline: none;
   border: 1px solid var(--Sapphire);
   box-shadow: 0 0 5px var(--Sapphire);
   color: var(--Base0);
   background-color: var(--Base6);
+}
+
+textarea[id="bio"] {
+  resize: vertical;
+  min-height: 250px;
 }
 
 input[role="switch"] {
@@ -258,4 +262,11 @@ input[role="switch"]:checked {
   border-radius: 10px;
   background-color: rgb(0 0 0 / 0.7);
   color: var(--Base0);
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-wrap: wrap;
 }
