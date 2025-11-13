@@ -288,3 +288,15 @@ input[role="switch"]:checked {
   border-radius: 5px;
   background-color: var(--Base6);
 }
+
+.color-you {
+  color: var(--Green);
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--Green);
+}
+
+.color-them {
+  color: var(--Peach);
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--Peach);
+}
