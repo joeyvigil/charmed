@@ -228,17 +228,17 @@ footer h5 {
   min-height: 90vh;
 }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"], textarea[id="criteria"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"], textarea[id="criteria"], textarea[id="sendText"] {
   color: var(--Base0);
   background-color: var(--Base6);
   border: 1px solid var(--Base3);
 }
 
-input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder, textarea[id="bio"]::placeholder, textarea[id="criteria"]::placeholder {
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder, textarea[id="bio"]::placeholder, textarea[id="criteria"]::placeholder, textarea[id="sendText"]::placeholder {
   color: var(--Base4);
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea[id="bio"]:focus, textarea[id="criteria"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea[id="bio"]:focus, textarea[id="criteria"]:focus, textarea[id="sendText"]:focus {
   outline: none;
   border: 1px solid var(--Sapphire);
   box-shadow: 0 0 5px var(--Sapphire);

@@ -107,7 +107,6 @@ const Messages = ({ user }) => {
                         <div className="match-details">
                           <div><span className="color-text">Name:</span> {match.first_name} {match.last_name}</div>
                           <div><span className="color-text">Riot ID:</span> {match.in_game_name} #{match.tagline}</div>
-                          <div><span className="color-text">Location:</span> {match.country}, {match.state}, {match.city}</div>
                           <button className="btn btn-sm mt-2" onClick={() => handleViewProfile(match.id)}>View Profile</button>
                           <button className="btn btn-sm mt-2" onClick={() => setSelectedMatch(match)}>Chat</button>
                         </div>
