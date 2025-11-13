@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Messages = () => {
+const Messages = ({ user }) => {
   return (
         <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
         <div className="container ">

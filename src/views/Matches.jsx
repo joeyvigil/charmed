@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Matches = () => {
+const Matches = ({ user }) => {
   return (
         <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
         <div className="container ">

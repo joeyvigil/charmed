@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Admin = () => {
+const Admin = ({ user }) => {
   return (
         <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
         <div className="container ">

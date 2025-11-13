@@ -271,3 +271,8 @@ input[role="switch"]:checked {
   height: 100%;
   flex-wrap: wrap;
 }
+
+.line {
+  border-top: 1px solid var(--Peach);
+
+}

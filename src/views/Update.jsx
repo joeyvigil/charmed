@@ -10,7 +10,7 @@ const Update = ({ user }) => {
   const [email, setEmail] = React.useState(user.email || "");
   const [password, setPassword] = React.useState("");
   const [repeatPassword, setRepeatPassword] = React.useState("");
-  const [gender, setGender] = React.useState("male");
+  const [gender, setGender] = React.useState(user.gender || "male");
   const [birthdate, setBirthdate] = React.useState(user.birthdate || "");
   const [bio, setBio] = React.useState(user.bio || "");
   const [city, setCity] = React.useState(user.city || "");
@@ -283,8 +283,9 @@ const Update = ({ user }) => {
                     
                   </div>
                 </div>
-              </>
-            ) : (
+            </>
+          ) : (
+            <>
 
               <div className="col-12">
                 <div className="flex-container">
@@ -292,7 +293,8 @@ const Update = ({ user }) => {
                 </div>
               </div>
 
-            )}
+            </>
+          )}
 
           </div>
         </div>
