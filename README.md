@@ -12,35 +12,27 @@ This project uses the [Riot Games API](https://developer.riotgames.com/).
 
 ### Views
 - Home 🏠
-  - advertisement for site
-  - features
-  - payment (coming soon)
- 
+  - graphic intro
+
 - Profile 👤
   - view and edit profile information
   - add league accounts (most of info from api)
-  - Rank / Season Peak (Bronze → Challenger 😎)
-  - Main Role (Top / Jungle / Mid / ADC / Support)
-  - Favorite Champions (shows icons)
-  - Region (NA, EUW, etc.)
   - Bio
 
-- Settings ⚙️
+- Update ⚙️
   - change password
-  - change email
-  - delete account
-  - change notification settings
-
+  - change Riot ID
+  - change bio and other profile info
+  
 - Matches 💕
     - view people near you
-    - view people near rank
+    - search by criteria
 
 - Chat 💬
     - real-time messaging with other users
-    - notifications for new messages
-    - bans
+    - view message history
 
-- Login / Signup 🔐
+- Login / Register 🔐
     - create account
     - login to existing account
 
@@ -50,47 +42,7 @@ This project uses the [Riot Games API](https://developer.riotgames.com/).
 
 - Admin Dashboard 📊
     - manage users
-    - view site analytics
-
-- About Us ℹ️
-    - information about the site
-    - contact information
   
-- FAQ ❓
-    - frequently asked questions
-    - 
-- Terms of Service 📜
-    - legal information about using the site
-
-- Privacy Policy 🔒
-    - information about data collection and usage
-
-
-## Riot API requests + responses
-
-### Get account by Riot ID 'ACCOUNTS-V1'
-request:
-```
-GET https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/DANKEY%20KANG/banan
-```
-
-header:
-```json
-{
-"X-Riot-Token": "RGAPI-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-}
-```
-
-response (200):
-```json
-{
-    "puuid": "JLRJcLcMp5B_mw9Eu1Q_b5u5DeLkak3UlUZfevYYL8DCORwMwIwZsIAaCUf7xuf_3duGKBrs2ImDZA",
-    "gameName": "DANKEY KANG",
-    "tagLine": "banan"
-}
-```
-
-### more to come...
 
 ## Tech Stack
 - Frontend: React, Bootstrap, CSS, HTML, JavaScript, JSX, react-router-dom
