@@ -5,7 +5,7 @@ const Matches = ({ user }) => {
   const navigate = useNavigate();
   const [matches, setMatches] = React.useState([]);
   const [searchResult, setSearchResult] = React.useState(null);
-  const [criteria, setCriteria] = React.useState("\"gender\": \"female\", \n\"first_name\": \"Jane\", \n\"country\": \"USA\"");
+  const [criteria, setCriteria] = React.useState("\"gender\": \"female\", \n\"first_name\": \"Jane\", \n\"country\": \"USA\", \n\"in_game_name\": \"PixelDreamer\"");
 
 
   React.useEffect(() => {
@@ -131,22 +131,28 @@ const Matches = ({ user }) => {
               <button className='btn' onClick={() => handleSearch()}>Search</button>
              
 
-              
+              <div className='text-center'>
                 {searchResult && (
                   <>
                     {searchResult.map((match) => (
                       <div key={match.id}>
                         <div className="match-details">
+                          
                           <div><span className="color-text">Name:</span> {match.first_name} {match.last_name}</div>
+                          
                           <div><span className="color-text">Riot ID:</span> {match.in_game_name} #{match.tagline}</div>
-                          <div><span className="color-text">Location:</span> {match.country}, {match.state}, {match.city}</div>
+                          
+                          <div><span className="color-text">Location:</span> {match.city}, {match.state}, {match.country}</div>
+                          
                           <button className="btn btn-sm mt-2" onClick={() => handleViewProfile(match.id)}>View Profile</button>
                           <button className="btn btn-sm mt-2" onClick={() => handleAddMatch(match.id)}>Add Match</button>
+
                         </div>
                       </div>
                     ))}
                   </>
                 )}
+              </div>
               
 
             </div>
