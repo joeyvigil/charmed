@@ -68,14 +68,13 @@ const Matches = ({ user }) => {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    const response = await fetch(`https:/charmed-backend.onrender.com/users/add_match/${matchId}`, {
+    const response = await fetch(`https://charmed-backend.onrender.com/users/add_match/${matchId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
       }
     });
-
     if (response.ok) {
       const data = await response.json();
       console.log('Match added:', data);
@@ -88,7 +87,7 @@ const Matches = ({ user }) => {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    const response = await fetch(`https:/charmed-backend.onrender.com/users/remove_match/${matchId}`, {
+    const response = await fetch(`https://charmed-backend.onrender.com/users/remove_match/${matchId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
