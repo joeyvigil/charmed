@@ -80,6 +80,7 @@ const Matches = ({ user }) => {
       console.log('Match added:', data);
       // Optionally update state or UI to reflect the new match
       setMatches((prevMatches) => [...prevMatches, data]);
+      window.location.reload();
     }
   };
 
