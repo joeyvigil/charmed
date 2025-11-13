@@ -14,6 +14,7 @@ import Profile from './views/Profile.jsx'
 import Register from './views/Register.jsx'
 import Settings from './views/Settings.jsx'
 import Update from './views/Update.jsx'
+import ProfileID from './views/ProfileID.jsx'
 
 import './App.css'
 
@@ -69,6 +70,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/settings" element={<Settings user={user} />} />
         <Route path="/update" element={<Update user={user} />} />
+        <Route path='/profile/:id' element={<ProfileID />} />
       </Routes>
       {/* </div> */}
       <Footer />

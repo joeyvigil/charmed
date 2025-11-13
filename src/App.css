@@ -228,18 +228,17 @@ footer h5 {
   min-height: 90vh;
 }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"]  {
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"], textarea[id="criteria"] {
   color: var(--Base0);
   background-color: var(--Base6);
   border: 1px solid var(--Base3);
-
 }
 
-input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder, textarea[id="bio"]::placeholder {
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder, textarea[id="bio"]::placeholder, textarea[id="criteria"]::placeholder {
   color: var(--Base4);
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea[id="bio"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea[id="bio"]:focus, textarea[id="criteria"]:focus {
   outline: none;
   border: 1px solid var(--Sapphire);
   box-shadow: 0 0 5px var(--Sapphire);
@@ -248,8 +247,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 textarea[id="bio"] {
-  resize: vertical;
   min-height: 250px;
+}
+
+textarea[id="criteria"] {
+  min-height: 100px;
 }
 
 input[role="switch"] {
@@ -275,4 +277,14 @@ input[role="switch"]:checked {
 .line {
   border-top: 1px solid var(--Peach);
 
+}
+
+
+
+.match-details {
+  margin: 15px;
+  border: 1px solid var(--Base3);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--Base6);
 }
