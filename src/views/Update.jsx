@@ -5,21 +5,39 @@ import { useNavigate } from 'react-router-dom';
 const Update = ({ user }) => {
   const navigate = useNavigate();
 
-  const [first_name, setFirst] = React.useState(user.first_name || "");
-  const [last_name, setLast] = React.useState(user.last_name || "");
-  const [email, setEmail] = React.useState(user.email || "");
+  const [first_name, setFirst] = React.useState( "");
+  const [last_name, setLast] = React.useState("");
+  const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [repeatPassword, setRepeatPassword] = React.useState("");
-  const [gender, setGender] = React.useState(user.gender || "male");
-  const [birthdate, setBirthdate] = React.useState(user.birthdate || "");
-  const [bio, setBio] = React.useState(user.bio || "");
-  const [city, setCity] = React.useState(user.city || "");
-  const [state, setState] = React.useState(user.state || "");
-  const [country, setCountry] = React.useState(user.country || "");
-  const [in_game_name, setInGameName] = React.useState(user.in_game_name || "");
-  const [tagline, setTagline] = React.useState(user.tagline || "");
-  const [latitude, setLatitude] = React.useState(user.latitude || "999.9999");
-  const [longitude, setLongitude] = React.useState(user.longitude || "999.9999");
+  const [gender, setGender] = React.useState("male");
+  const [birthdate, setBirthdate] = React.useState("");
+  const [bio, setBio] = React.useState("");
+  const [city, setCity] = React.useState("");
+  const [state, setState] = React.useState("");
+  const [country, setCountry] = React.useState("");
+  const [in_game_name, setInGameName] = React.useState("");
+  const [tagline, setTagline] = React.useState("");
+  const [latitude, setLatitude] = React.useState("999.9999");
+  const [longitude, setLongitude] = React.useState("999.9999");
+
+  React.useEffect(() => {
+    if (user) {
+      setFirst(user.first_name || "");
+      setLast(user.last_name || "");
+      setEmail(user.email || "");
+      setGender(user.gender || "male");
+      setBirthdate(user.birthdate || "");
+      setBio(user.bio || "");
+      setCity(user.city || "");
+      setState(user.state || "");
+      setCountry(user.country || "");
+      setInGameName(user.in_game_name || "");
+      setTagline(user.tagline || "");
+      setLatitude(user.latitude || "999.9999");
+      setLongitude(user.longitude || "999.9999");
+    }
+  }, [user]);
 
   const handleSave = (e) => {
         console.clear();
