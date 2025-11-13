@@ -87,16 +87,23 @@ const Profile = ({ user }) => {
                 </div>
 
                 <div className='line mb-4'> </div>
-                
-                <h3 className="text-center">
-                  {user.in_game_name} <span className='quote-text'>#{user.tagline}</span>
-                </h3>
+
+                {summonerData ? (<>
+                  <h3 className="text-center">
+                    {user.in_game_name} <span className='quote-text'>#{user.tagline}</span>
+                  </h3>
 
                 <h5 className="mb-4 text-center">
                   <span className="color-text">Level:</span> {summonerData ? summonerData.summonerLevel : 'Loading...'}
                 </h5>
 
-                <img style={{ borderRadius: '50%', display: 'block', margin: '0 auto' }} src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${summonerData ? summonerData.profileIconId : 'Loading...'}.jpg`} alt=""  className='mb-4'/>
+                <img style={{ borderRadius: '50%', display: 'block', margin: '0 auto' }} src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${summonerData.profileIconId}.jpg`} alt=""  className='mb-4'/>
+                </>
+                ) : (
+                  <h5 className="mb-4 text-center">
+                    {user.in_game_name} #{user.tagline} <span className='quote-text'>not found</span>
+                  </h5>
+                )}
 
 
                 <button className="btn" onClick={() => navigate('/update')}>
