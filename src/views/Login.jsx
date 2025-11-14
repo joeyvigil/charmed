@@ -39,7 +39,12 @@ const Login = () => {
     };
 
   return (
-    <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
+        <>
+    <video autoPlay muted loop id="myVideo2">
+      <source src="cat_rain.mp4" type="video/mp4" />
+    </video>
+
+    <div className='background'>
         <div className="container ">
             <div className="row">
             <div className="col-12 col-md-6">
@@ -93,6 +98,7 @@ const Login = () => {
         </div>
         </div>
     </div>
+    </>
   )
 }
 

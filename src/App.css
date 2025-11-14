@@ -91,12 +91,13 @@
 
 
 .mynavbar {
-  /* position: fixed;
-  background-color: rgba(0, 0, 0, .95); */
-  background-color: var(--base7);
+  /* position: fixed; */
+  background-color: rgba(0, 0, 0, .85);
+  /* background-color: var(--base7); */
   color: var(--Base0);
   width: 100%;
   z-index: 99;
+  /* border-bottom: 1px solid var(--Base3); */
 }
 
 .navbar {
@@ -184,7 +185,7 @@ h4 {
 }
 
 video {
-  margin-bottom: -7px;
+  /* margin-bottom: -7px; */
 }
 
 .text-body-secondary {

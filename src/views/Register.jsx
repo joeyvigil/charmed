@@ -4,154 +4,160 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
   const navigate = useNavigate();
 
-  const [first_name, setFirst] = React.useState("");
-  const [last_name, setLast] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [repeatPassword, setRepeatPassword] = React.useState("");
-  const [gender, setGender] = React.useState("male");
-  const [birthdate, setBirthdate] = React.useState("");
-
+  const [first_name, setFirst] = useState("");
+  const [last_name, setLast] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const [gender, setGender] = useState("male");
+  const [birthdate, setBirthdate] = useState("");
 
   const formSubmit = async (e) => {
-        e.preventDefault();
-        console.clear();
-        console.log('form: ', email, password);
-        console.log(e);
-        if (password !== repeatPassword) {
-            alert('Passwords do not match. Please try again.');
-            return;
-        }
-        const register = async () => {
+    e.preventDefault();
+    console.clear();
+    console.log('form: ', email, password);
+    console.log(e);
+    
+    if (password !== repeatPassword) {
+      alert('Passwords do not match. Please try again.');
+      return;
+    }
 
+    const register = async () => {
+      const response = await fetch('https://charmed-backend.onrender.com/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          bio: "",
+          city: "",
+          state: "",
+          country: "",
+          in_game_name: "",
+          tagline: "",
+          latitude: 0,
+          longitude: 0,
+          first_name,
+          last_name,
+          email,
+          password,
+          gender,
+          birthdate
+        })
+      });
 
-            const response = await fetch('https://charmed-backend.onrender.com/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    bio: "",
-                    city: "",
-                    state: "",
-                    country: "",
-                    in_game_name: "",
-                    tagline: "",
-                    latitude: 0,
-                    longitude: 0,
-                    first_name,
-                    last_name,
-                    email,
-                    password,
-                    gender,
-                    birthdate
-                })
-            });
-            
-            const data = await response.json();
-            if (response.ok) {
-                console.log('Registration successful:', data);
-                navigate('/login');
-            } else {
-                console.error('Registration failed:', data);
-                alert('Registration failed. Please check your details and try again.');
-            }
-        };
-        register();
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Registration successful:', data);
+        navigate('/login');
+      } else {
+        console.error('Registration failed:', data);
+        alert('Registration failed. Please check your details and try again.');
+      }
     };
+    
+    register();
+  };
 
   return (
-    <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
-        <div className="container ">
-            <div className="row">
+    <>
+      <video autoPlay muted loop id="myVideo2">
+        <source src="cat_rain.mp4" type="video/mp4" />
+      </video>
+
+      <div className='background'>
+        <div className="container">
+          <div className="row">
             <div className="col-12 col-md-6">
-            <div className="small-container">
+              <div className="small-container">
                 <h1 className="text-center">Register</h1>
                 <form onSubmit={formSubmit}>
-
-                    {/* First Name input */}
+                  {/* First Name input */}
                   <div className="mb-2">
-                    <input 
-                      type="text" 
-                      className="form-control" 
-                      id="first" 
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="first"
                       value={first_name}
                       onChange={(e) => setFirst(e.target.value)}
-                      placeholder='John' 
-                      required 
+                      placeholder='John'
+                      required
                     />
                     <label className="form-label">First Name</label>
                   </div>
 
                   {/* Last Name input */}
                   <div className="mb-2">
-                    <input 
-                      type="text" 
-                      className="form-control" 
-                      id="last" 
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="last"
                       value={last_name}
                       onChange={(e) => setLast(e.target.value)}
-                      placeholder='Doe' 
-                      required 
+                      placeholder='Doe'
+                      required
                     />
                     <label className="form-label">Last Name</label>
                   </div>
 
                   {/* Email input */}
                   <div className="mb-2">
-                    <input 
-                      type="email" 
-                      className="form-control" 
-                      id="email" 
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder='name@email.com' 
-                      required 
+                      placeholder='name@email.com'
+                      required
                     />
                     <label className="form-label">Email Address</label>
                   </div>
 
                   {/* Password input */}
                   <div className="mb-2">
-                    <input 
-                      type="password" 
-                      className="form-control" 
-                      id="password" 
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder='password123' 
-                      required 
+                      placeholder='password123'
+                      required
                     />
                     <label className="form-label">Password</label>
                   </div>
 
                   {/* Repeat Password input */}
                   <div className="mb-2">
-                    <input 
-                      type="password" 
-                      className="form-control" 
-                      id="repeatPassword" 
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="repeatPassword"
                       value={repeatPassword}
                       onChange={(e) => setRepeatPassword(e.target.value)}
-                      placeholder='password123' 
-                      required 
+                      placeholder='password123'
+                      required
                     />
                     <label className="form-label">Repeat Password</label>
                   </div>
-                  
-                  {/* gender switch*/}
+
+                  {/* Gender switch */}
                   <div className="mb-2">
-                  <div className="form-check form-switch">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      role="switch"
-                      id="genderSwitch"
-                      checked={gender === "male"}
-                      onChange={() => setGender(gender === "male" ? "female" : "male")}
-                    />
-                    <label className="form-check-label" htmlFor="genderSwitch">{gender}</label>
-                  </div>
+                    <div className="form-check form-switch">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        id="genderSwitch"
+                        checked={gender === "male"}
+                        onChange={() => setGender(gender === "male" ? "female" : "male")}
+                      />
+                      <label className="form-check-label" htmlFor="genderSwitch">
+                        {gender}
+                      </label>
+                    </div>
                     <label className="form-label">Gender</label>
                   </div>
 
@@ -169,17 +175,17 @@ const Register = () => {
                   </div>
 
                   {/* Submit button */}
-                  <button type="submit" className="btn btn-primary btn-block ">
-                      Submit
+                  <button type="submit" className="btn btn-primary btn-block">
+                    Submit
                   </button>
-
                 </form>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-        </div>
-    </div>
-  )
-}
+      </div>
+    </>
+  );
+};
 
-export default Register
+export default Register;

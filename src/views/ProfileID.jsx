@@ -1,144 +1,151 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const ProfileID = () => {
-  const { id } = useParams();
-  const [user, setUser] = React.useState(null);
+  const { id } = useParams()
   const navigate = useNavigate()
-  // const riotApiKey = import.meta.env.VITE_RIOT_API_KEY
-  // const riotApiKey = process.env.RIOT_API_KEY
-  const riotApiKey= 'RGAPI-60155725-1674-4669-adb6-d0b93aff6ab8' // make secret
-  const [puuid, setPuuid] = useState('')  
-  //MjBTR3noBm7sUlqtvI4o6ZV_QH1T4OmE4HmIoRIHUz3IG7ABLzVw9FuUJM1i7T7TV_bKU241xIKcSg
+  const [user, setUser] = useState(null)
+  const [puuid, setPuuid] = useState('')
   const [summonerData, setSummonerData] = useState(null)
+  
+  // TODO: Move to environment variable
+  const riotApiKey = 'RGAPI-60155725-1674-4669-adb6-d0b93aff6ab8'
 
   useEffect(() => {
-    // riot api to grab info with in_game_name and tagline
     const fetchRiotData = async () => {
-      if (user) {
-        try {
-          const response = await fetch(`https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${user.in_game_name}/${user.tagline}`, {
+      if (!user) return
+
+      try {
+        const response = await fetch(
+          `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${user.in_game_name}/${user.tagline}`,
+          {
             headers: {
               'X-Riot-Token': riotApiKey
             }
-          })
-          const data = await response.json()
-          console.log('Riot Data:')
-          console.log(data)
-          setPuuid(data.puuid)
-          fetchSummonerData()
-        } catch (error) {
-          console.error('Error fetching Riot data:', error)
-        }
-      }
-    }
-    const fetchSummonerData = async () => {
-      console.log('Current PUUID:', puuid)
-      if (puuid) {
-        console.log('Fetching Summoner data for PUUID:', puuid)
-        try {
-          const response = await fetch(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${puuid}`, {
-            headers: {
-              'X-Riot-Token': riotApiKey
-            }
-          })
-          const data = await response.json()
-          console.log('Summoner Data:')
-          console.log(data)
-          setSummonerData(data)
-        } catch (error) {
-          console.error('Error fetching Summoner data:', error)
-        }
+          }
+        )
+        const data = await response.json()
+        console.log('Riot Data:', data)
+        setPuuid(data.puuid)
+      } catch (error) {
+        console.error('Error fetching Riot data:', error)
       }
     }
 
     fetchRiotData()
-    // fetchSummonerData()
-  }, [user, puuid])
+  }, [user, riotApiKey])
 
-  React.useEffect(() => {
+  useEffect(() => {
+    const fetchSummonerData = async () => {
+      if (!puuid) return
+
+      console.log('Fetching Summoner data for PUUID:', puuid)
+      try {
+        const response = await fetch(
+          `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${puuid}`,
+          {
+            headers: {
+              'X-Riot-Token': riotApiKey
+            }
+          }
+        )
+        const data = await response.json()
+        console.log('Summoner Data:', data)
+        setSummonerData(data)
+      } catch (error) {
+        console.error('Error fetching Summoner data:', error)
+      }
+    }
+
+    fetchSummonerData()
+  }, [puuid, riotApiKey])
+
+  useEffect(() => {
     const fetchProfileData = async () => {
       const response = await fetch(`https://charmed-backend.onrender.com/users/${id}`)
-      const data = await response.json();
+      const data = await response.json()
       if (response.ok) {
-        setUser(data);
+        setUser(data)
       }
-    };
+    }
 
-    fetchProfileData();
-  }, [id]);
+    fetchProfileData()
+  }, [id])
 
   return (
-    <div className='background' style={{ backgroundImage: 'url("back1.webp")' }}>
-      <div className="container">
-        <div className="row">
+    <>
+      <video autoPlay muted loop id="myVideo2">
+        <source src="cat_rain.mp4" type="video/mp4" />
+      </video>
 
-          {user ? (<>
-            <div className="col-12 col-md-6">
-              <div className="flex-container">
+      <div className="background">
+        <div className="container">
+          <div className="row">
+            {user ? (
+              <div className="col-12 col-md-6">
+                <div className="flex-container">
+                  <h1 className="text-center">
+                    {user.first_name} {user.last_name}
+                  </h1>
+                  <div className="mb-2">
+                    <span className="color-text">Email:</span> {user.email}
+                  </div>
+                  <div className="mb-2">
+                    <span className="color-text">Location:</span> {user.city}, {user.state}, {user.country}
+                  </div>
+                  <div className="mb-2">
+                    <span className="color-text">Birthdate:</span> {user.birthdate}
+                  </div>
+                  <div className="mb-2">
+                    <span className="color-text">Bio:</span> {user.bio}
+                  </div>
+                  <div className="mb-2">
+                    <span className="color-text">Gender:</span> {user.gender}
+                  </div>
+                  <div className="mb-4">
+                    <span className="color-text">Profile URL:</span> charmed.lol/#/profile/{user.id}
+                  </div>
 
-                <h1 className="text-center">
-                  {user.first_name} {user.last_name}
-                </h1>
-                <div className="mb-2">
-                  <span className="color-text">Email:</span> {user.email}
+                  <div className="line mb-4"></div>
+
+                  {summonerData ? (
+                    <>
+                      <h3 className="text-center">
+                        {user.in_game_name} <span className="quote-text">#{user.tagline}</span>
+                      </h3>
+
+                      <h5 className="mb-4 text-center">
+                        <span className="color-text">Level:</span> {summonerData.summonerLevel}
+                      </h5>
+
+                      <img
+                        style={{ borderRadius: '50%', display: 'block', margin: '0 auto' }}
+                        src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${summonerData.profileIconId}.jpg`}
+                        alt="Summoner Icon"
+                        className="mb-4"
+                      />
+                    </>
+                  ) : (
+                    <h5 className="mb-4 text-center">
+                      {user.in_game_name} #{user.tagline} <span className="quote-text">not found</span>
+                    </h5>
+                  )}
                 </div>
-                <div className="mb-2">
-                  <span className="color-text">Location:</span> {user.city}, {user.state}, {user.country}
-                </div>
-                <div className="mb-2">
-                  <span className="color-text">Birthdate:</span> {user.birthdate}
-                </div>
-                <div className="mb-2">
-                  <span className="color-text">Bio:</span> {user.bio}
-                </div>
-                <div className="mb-2">
-                  <span className="color-text">Gender:</span> {user.gender}
-                </div>
-                <div className="mb-4">
-                  <span className="color-text">Profile URL:</span> charmed.lol/#/profile/{user.id}
-                </div>
-
-                <div className='line mb-4'> </div>
-
-                {summonerData ? (<>
-                  <h3 className="text-center">
-                    {user.in_game_name} <span className='quote-text'>#{user.tagline}</span>
-                  </h3>
-
-                <h5 className="mb-4 text-center">
-                  <span className="color-text">Level:</span> {summonerData ? summonerData.summonerLevel : 'Loading...'}
-                </h5>
-
-                <img style={{ borderRadius: '50%', display: 'block', margin: '0 auto' }} src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${summonerData.profileIconId}.jpg`} alt=""  className='mb-4'/>
-                </>
-                ) : (
-                  <h5 className="mb-4 text-center">
-                    {user.in_game_name} #{user.tagline} <span className='quote-text'>not found</span>
-                  </h5>
-                )}
-
               </div>
-            </div>
-
-          </>  
-          ) : (
-            <div className="col">
-              <div className="flex-container">
-                <h2 className="text-center">
-                  You must be logged in to view your profile.
-                </h2>
+            ) : (
+              <div className="col">
+                <div className="flex-container">
+                  <h2 className="text-center">
+                    You must be logged in to view your profile.
+                  </h2>
+                </div>
               </div>
-            </div>
-          )}
-
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
-  
+    </>
+  )
 }
 
 export default ProfileID
