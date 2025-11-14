@@ -184,9 +184,9 @@ h4 {
   padding: 50px 0 10px 0;
 }
 
-video {
-  /* margin-bottom: -7px; */
-}
+/* video {
+  margin-bottom: -7px;
+} */
 
 .text-body-secondary {
   color: var(--Mauve) !important;
