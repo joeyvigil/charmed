@@ -45,11 +45,11 @@ This project uses the [Riot Games API](https://developer.riotgames.com/).
   
 
 ## Tech Stack
-- Frontend: React, Bootstrap, CSS, HTML, JavaScript, JSX, react-router-dom
-- Backend: Flask, SQLAlchemy, Python, flask-cors, flask-marshmallow, marshmallow-sqlalchemy, requests, flask-limiter, flask-caching, python-jose, flask-swagger, flask-swagger-ui, gunicorn, Werkzeug
-- Database: PostgreSQL
-- Hosting: GitHub Pages (frontend), porkbun (domain), Render web service & PostgreSQL (backend)
-- APIs: Riot Games API
-- Other Tools: Postman, Git, GitHub
+- **Frontend:** React, Bootstrap, CSS, HTML, JavaScript, JSX, react-router-dom
+- **Backend:** Flask, SQLAlchemy, Python, flask-cors, flask-marshmallow, marshmallow-sqlalchemy, requests, flask-limiter, flask-caching, python-jose, flask-swagger, flask-swagger-ui, gunicorn, Werkzeug
+- **Database:** PostgreSQL
+- **Hosting:** **GitHub Pages** (frontend), **porkbun** (domain), **Render** web service & PostgreSQL (backend)
+- **APIs:** Riot Games API
+- **Other:** Tools: Postman, Git, GitHub, Copilot
 
 
