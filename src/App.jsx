@@ -60,7 +60,7 @@ function App() {
 
       {/* <div style={{"min-height": "91vh"}}> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/admin/" element={<Admin user={user} />} />
         <Route path="/messages" element={<Messages user={user} />} />
         <Route path="/login" element={<Login />} />
