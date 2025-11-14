@@ -2,10 +2,16 @@ import React from 'react'
 
 const Admin = ({ user }) => {
   return (
-        <div className='background' style={{backgroundImage: 'url("back1.webp")'}}>
-        <div className="container ">
-            <div className="row">
-            <div className="col-12 col-md-6">
+    <>
+    <video autoPlay muted loop id="myVideo2">
+      <source src="cat_rain.mp4" type="video/mp4" />
+    </video>
+
+    <div className='background'>
+    {/* <div className='background' style={{backgroundImage: 'url("back1.webp")'}}> */}
+      <div className="container ">
+        <div className="row">
+          <div className="col-12 col-md-6">
             <div className="flex-container">
               <h1 className="text-center">Admin Panel</h1>
               <p className="text-center">Manage users and settings from this panel.</p>
@@ -14,6 +20,7 @@ const Admin = ({ user }) => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
