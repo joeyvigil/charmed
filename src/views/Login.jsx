@@ -9,7 +9,6 @@ const Login = () => {
 
     const formSubmit = async (e) => {
         setStatusText('Starting up Render Backend... (This may take a moment)...');
-        // disable button
         const submitBtn = document.getElementById('submitBtn');
         submitBtn.disabled = true;
         e.preventDefault();
