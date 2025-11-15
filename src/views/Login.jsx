@@ -5,8 +5,10 @@ const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [statusText, setStatusText] = useState('');
 
     const formSubmit = async (e) => {
+        setStatusText('Starting up Render Backend... (This may take a moment)...');
         e.preventDefault();
         console.clear();
         console.log('form: ', email, password);
@@ -29,10 +31,11 @@ const Login = () => {
                 console.log('Login successful:', data);
                 data.token && localStorage.setItem('token', data.token);
                 console.log('Token stored in localStorage', data.token);
+                setStatusText('');
                 navigate('/profile');
             } else {
+                setStatusText('Login failed. Please check your credentials and try again.');
                 console.error('Login failed:', data);
-                alert('Login failed. Please check your credentials and try again.');
             }
         };
         login();
@@ -84,6 +87,8 @@ const Login = () => {
                     <button type="submit" className="btn btn-primary btn-block mb-4">
                         Sign in
                     </button>
+
+                    <div><h5 style={{ color: "var(--Peach)" }}>{statusText}</h5></div>
 
                     {/* Register buttons */}
                     <div className="text-center">

@@ -11,12 +11,14 @@ const Register = () => {
   const [repeatPassword, setRepeatPassword] = useState("");
   const [gender, setGender] = useState("male");
   const [birthdate, setBirthdate] = useState("");
+  const [statusText, setStatusText] = useState("");
 
   const formSubmit = async (e) => {
     e.preventDefault();
     console.clear();
     console.log('form: ', email, password);
     console.log(e);
+    setStatusText('Starting up Render Backend... (This may take a moment)...');
     
     if (password !== repeatPassword) {
       alert('Passwords do not match. Please try again.');
@@ -178,6 +180,8 @@ const Register = () => {
                   <button type="submit" className="btn btn-primary btn-block">
                     Submit
                   </button>
+
+                  <div className='mt-2'><h5 style={{ color: "var(--Peach)" }}>{statusText}</h5></div>
                 </form>
               </div>
             </div>
