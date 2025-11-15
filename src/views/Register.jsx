@@ -24,6 +24,8 @@ const Register = () => {
       alert('Passwords do not match. Please try again.');
       return;
     }
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
 
     const register = async () => {
       const response = await fetch('https://charmed-backend.onrender.com/users', {
@@ -52,10 +54,12 @@ const Register = () => {
       const data = await response.json();
       if (response.ok) {
         console.log('Registration successful:', data);
+        submitBtn.disabled = false;
         navigate('/login');
       } else {
         console.error('Registration failed:', data);
         alert('Registration failed. Please check your details and try again.');
+        submitBtn.disabled = false;
       }
     };
     
@@ -177,7 +181,7 @@ const Register = () => {
                   </div>
 
                   {/* Submit button */}
-                  <button type="submit" className="btn btn-primary btn-block">
+                  <button type="submit" className="btn btn-primary btn-block" id='submitBtn'>
                     Submit
                   </button>
 

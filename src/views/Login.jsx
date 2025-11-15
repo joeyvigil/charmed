@@ -9,6 +9,8 @@ const Login = () => {
 
     const formSubmit = async (e) => {
         setStatusText('Starting up Render Backend... (This may take a moment)...');
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
         e.preventDefault();
         console.clear();
         console.log('form: ', email, password);
@@ -31,11 +33,13 @@ const Login = () => {
                 console.log('Login successful:', data);
                 data.token && localStorage.setItem('token', data.token);
                 console.log('Token stored in localStorage', data.token);
+                submitBtn.disabled = false;
                 setStatusText('');
                 navigate('/profile');
             } else {
                 setStatusText('Login failed. Please check your credentials and try again.');
                 console.error('Login failed:', data);
+                submitBtn.disabled = false;
             }
         };
         login();
@@ -84,7 +88,7 @@ const Login = () => {
                     </div>
 
                     {/* Submit button */}
-                    <button type="submit" className="btn btn-primary btn-block mb-4">
+                    <button type="submit" className="btn btn-primary btn-block mb-4" id='submitBtn'>
                         Sign in
                     </button>
 
