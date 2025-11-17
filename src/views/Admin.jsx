@@ -2,7 +2,7 @@ const Admin = ({ user }) => {
   return (
     <>
       <video autoPlay muted loop id="myVideo2">
-        <source src="cat_rain.mp4" type="video/mp4" />
+        <source src="house.mp4" type="video/mp4" />
       </video>
 
       <div className="background">

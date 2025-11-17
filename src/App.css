@@ -237,7 +237,7 @@ footer h5 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 90vh;
+  min-height: 92vh;
 }
 
 input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"], textarea[id="criteria"], textarea[id="sendText"] {
