@@ -26,85 +26,54 @@ const Admin = ({ user }) => {
       document.documentElement.style.setProperty('--Teal', '#179299');
       document.documentElement.style.setProperty('--Sapphire', '#209fb5');
       document.documentElement.style.setProperty('--Lavender', '#7287fd');
-      document.documentElement.style.setProperty('--Base0', '#4c4f69');
-      document.documentElement.style.setProperty('--Base1', '#5c5f77');
-      document.documentElement.style.setProperty('--Base2', '#6c6f85');
-      document.documentElement.style.setProperty('--Base3', '#8c8fa1');
-      document.documentElement.style.setProperty('--Base4', '#acb0be');
-      document.documentElement.style.setProperty('--Base5', '#bcc0cc');
-      document.documentElement.style.setProperty('--Base6', '#eff1f5');
-      document.documentElement.style.setProperty('--base7', '#dce0e8');
 
-    } else if (theme === 'frappe') {
-      document.documentElement.style.setProperty('--Rosewater', '#f2d5cf');
-      document.documentElement.style.setProperty('--Flamingo', '#eebebe');
-      document.documentElement.style.setProperty('--Pink', '#f4b8e4');
-      document.documentElement.style.setProperty('--Mauve', '#ca9ee6');
-      document.documentElement.style.setProperty('--Maroon', '#ea999c');
-      document.documentElement.style.setProperty('--Peach', '#ef9f76');
-      document.documentElement.style.setProperty('--Yellow', '#e5c890');
-      document.documentElement.style.setProperty('--Green', '#a6d189');
-      document.documentElement.style.setProperty('--Teal', '#81c8be');
-      document.documentElement.style.setProperty('--Sapphire', '#85c1dc');
-      document.documentElement.style.setProperty('--Lavender', '#babbf1');
-      document.documentElement.style.setProperty('--Base0', '#c6d0f5'); 
-      document.documentElement.style.setProperty('--Base1', '#b5bfe2'); 
-      document.documentElement.style.setProperty('--Base2', '#a5adce'); 
-      document.documentElement.style.setProperty('--Base3', '#838ba7'); 
-      document.documentElement.style.setProperty('--Base4', '#626880'); 
-      document.documentElement.style.setProperty('--Base5', '#51576d'); 
-      document.documentElement.style.setProperty('--Base6', '#303446'); 
-      document.documentElement.style.setProperty('--base7', '#232634'); 
+    } else if (theme === 'dracula') {
+      document.documentElement.style.setProperty('--Rosewater', '#ff79c6');
+      document.documentElement.style.setProperty('--Flamingo', '#ff5555');
+      document.documentElement.style.setProperty('--Pink', '#ff79c6');
+      document.documentElement.style.setProperty('--Mauve', '#bd93f9');
+      document.documentElement.style.setProperty('--Maroon', '#ff5555');
+      document.documentElement.style.setProperty('--Peach', '#ffb86c');
+      document.documentElement.style.setProperty('--Yellow', '#f1fa8c');
+      document.documentElement.style.setProperty('--Green', '#50fa7b');
+      document.documentElement.style.setProperty('--Teal', '#8be9fd');
+      document.documentElement.style.setProperty('--Sapphire', '#8be9fd');
+      document.documentElement.style.setProperty('--Lavender', '#bd93f9');
 
-    } else if (theme === 'macchiato') {
-      document.documentElement.style.setProperty('--Rosewater', '#f4dbd6');
-      document.documentElement.style.setProperty('--Flamingo', '#f0c6c6');
-      document.documentElement.style.setProperty('--Pink', '#f5bde6');
-      document.documentElement.style.setProperty('--Mauve', '#c6a0f6');
-      document.documentElement.style.setProperty('--Maroon', '#ee99a0');
-      document.documentElement.style.setProperty('--Peach', '#f5a97f');
-      document.documentElement.style.setProperty('--Yellow', '#eed49f');
-      document.documentElement.style.setProperty('--Green', '#a6da95');
-      document.documentElement.style.setProperty('--Teal', '#8bd5ca');
-      document.documentElement.style.setProperty('--Sapphire', '#7dc4e4');
-      document.documentElement.style.setProperty('--Lavender', '#b7bdf8');
-      document.documentElement.style.setProperty('--Base0', '#cad3f5'); 
-      document.documentElement.style.setProperty('--Base1', '#b8c0e0'); 
-      document.documentElement.style.setProperty('--Base2', '#a5adcb'); 
-      document.documentElement.style.setProperty('--Base3', '#8087a2'); 
-      document.documentElement.style.setProperty('--Base4', '#5b6078'); 
-      document.documentElement.style.setProperty('--Base5', '#494d64'); 
-      document.documentElement.style.setProperty('--Base6', '#24273a'); 
-      document.documentElement.style.setProperty('--base7', '#181926'); 
+    } else if (theme === 'atom') {
+      document.documentElement.style.setProperty('--Rosewater', 'hsl(355, 65%, 65%)');
+      document.documentElement.style.setProperty('--Flamingo', 'hsl(  5, 48%, 51%)');
+      document.documentElement.style.setProperty('--Pink', 'hsl(355, 65%, 65%)');
+      document.documentElement.style.setProperty('--Mauve', 'hsl(286, 60%, 67%)');
+      document.documentElement.style.setProperty('--Maroon', 'hsl(  5, 48%, 51%)');
+      document.documentElement.style.setProperty('--Peach', 'hsl( 29, 54%, 61%)');
+      document.documentElement.style.setProperty('--Yellow', 'hsl( 39, 67%, 69%)');
+      document.documentElement.style.setProperty('--Green', 'hsl( 95, 38%, 62%)');
+      document.documentElement.style.setProperty('--Teal', 'hsl(187, 47%, 55%)');
+      document.documentElement.style.setProperty('--Sapphire', 'hsl(187, 47%, 55%)');
+      document.documentElement.style.setProperty('--Lavender', 'hsl(207, 82%, 66%)');
 
     }
-    else if (theme === 'mocha') {
-      document.documentElement.style.setProperty('--Rosewater', '#f5e0dc');
-      document.documentElement.style.setProperty('--Flamingo', '#f2cdcd');
-      document.documentElement.style.setProperty('--Pink', '#f5c2e7');
-      document.documentElement.style.setProperty('--Mauve', '#cba6f7');
-      document.documentElement.style.setProperty('--Maroon', '#eba0ac');
-      document.documentElement.style.setProperty('--Peach', '#fab387');
-      document.documentElement.style.setProperty('--Yellow', '#f9e2af');
-      document.documentElement.style.setProperty('--Green', '#a6e3a1');
-      document.documentElement.style.setProperty('--Teal', '#94e2d5');
-      document.documentElement.style.setProperty('--Sapphire', '#74c7ec');
-      document.documentElement.style.setProperty('--Lavender', '#b4befe');
-      document.documentElement.style.setProperty('--Base0', '#cdd6f4'); 
-      document.documentElement.style.setProperty('--Base1', '#bac2de'); 
-      document.documentElement.style.setProperty('--Base2', '#a6adc8'); 
-      document.documentElement.style.setProperty('--Base3', '#7f849c'); 
-      document.documentElement.style.setProperty('--Base4', '#585b70'); 
-      document.documentElement.style.setProperty('--Base5', '#45475a'); 
-      document.documentElement.style.setProperty('--Base6', '#1e1e2e'); 
-      document.documentElement.style.setProperty('--base7', '#11111b');
+    else if (theme === 'gruvbox') {
+      document.documentElement.style.setProperty('--Rosewater', '#fb4934');
+      document.documentElement.style.setProperty('--Flamingo', '#9d0006');
+      document.documentElement.style.setProperty('--Pink', '#8f3f71');
+      document.documentElement.style.setProperty('--Mauve', '#b16286');
+      document.documentElement.style.setProperty('--Maroon', '#cc241d');
+      document.documentElement.style.setProperty('--Peach', '#d65d0e');
+      document.documentElement.style.setProperty('--Yellow', '#d79921');
+      document.documentElement.style.setProperty('--Green', '#98971a');
+      document.documentElement.style.setProperty('--Teal', '#689d6a');
+      document.documentElement.style.setProperty('--Sapphire', '#458588');
+      document.documentElement.style.setProperty('--Lavender', '#b8bb26');
+
     }
   };
 
   return (
     <>
       <video autoPlay muted loop id="myVideo2">
-        <source src={background} type="video/mp4" />
+        <source src='akira.mp4' type="video/mp4" />
       </video>
 
       <div className="background">
@@ -146,9 +115,9 @@ const Admin = ({ user }) => {
                       value={theme}
                     >
                       <option value="latte">Latte</option>
-                      <option value="frappe">Frappe</option>
-                      <option value="macchiato">Macchiato</option>
-                      <option value="mocha">Mocha</option>
+                      <option value="dracula">Dracula</option>
+                      <option value="atom">Atom</option>
+                      <option value="gruvbox">Gruvbox</option>
                     </select>
 
 
