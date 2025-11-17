@@ -17,7 +17,7 @@
   --Base4: #6c6f85;
   --Base5: #4c4f69;
   --Base6: #111;
-  --base7: #000;
+  --Base7: #000;
 }
 
 * {
@@ -28,7 +28,6 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  background-color: var(--Base7);
   color: var(--Base0);
   /* border: 1px solid goldenrod; */
 }
@@ -93,7 +92,7 @@
 .mynavbar {
   /* position: fixed; */
   background-color: rgba(0, 0, 0, .85);
-  /* background-color: var(--base7); */
+  /* background-color: var(--Base6); */
   color: var(--Base0);
   width: 100%;
   z-index: 99;
@@ -136,8 +135,8 @@ a:hover {
 }
 
 .btn:hover {
-    border: 1px solid var(--base7);
-    color: var(--base7);
+    border: 1px solid var(--Base7);
+    color: var(--Base7);
     background: var(--Pink);
     box-shadow: 6px 6px 0 var(--Mauve);
     transform: skewX(-15deg);
@@ -213,6 +212,8 @@ footer h5 {
   padding: 20px;
   border-radius: 10px;
   background-color: rgb(0 0 0 / 0.7);
+  /* background-color: rgba(var(--Base7), 0.7); */
+  /* background-color: rgb(var(--Base7), 0.7); */
   color: var(--Base0);
 }
 
