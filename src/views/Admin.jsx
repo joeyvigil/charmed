@@ -106,7 +106,7 @@ const Admin = ({ user }) => {
                       <option value="neon.mp4">neon</option>
                     </select>
 
-                    <label className="text-center">Dropdown menu to select Catppuccin theme.</label>
+                    <label className="text-center">Select theme</label>
                     <select 
                       name="theme" 
                       id="themeSelect" 
