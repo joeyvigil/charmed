@@ -241,6 +241,8 @@ footer h5 {
   min-height: 92vh;
 }
 
+
+
 input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"], textarea[id="criteria"], textarea[id="sendText"] {
   color: var(--Base0);
   background-color: var(--Base6);
@@ -310,4 +312,21 @@ input[role="switch"]:checked {
   color: var(--Peach);
   font-weight: bold;
   text-shadow: 0 0 10px var(--Peach);
+}
+
+
+/* .background and video on mobile (background image one, video off */
+@media only screen and (max-width: 600px) {
+  .background {
+  background-image: url("./road.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 92vh;
+  }
+
+  #myVideo2 {
+    display: none;
+  }
 }

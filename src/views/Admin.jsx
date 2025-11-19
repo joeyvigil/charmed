@@ -28,17 +28,20 @@ const Admin = ({ user }) => {
       document.documentElement.style.setProperty('--Lavender', '#7287fd');
 
     } else if (theme === 'dracula') {
-      document.documentElement.style.setProperty('--Rosewater', '#ff79c6');
-      document.documentElement.style.setProperty('--Flamingo', '#ff5555');
-      document.documentElement.style.setProperty('--Pink', '#ff79c6');
+
+      //randomize these colors
+      document.documentElement.style.setProperty('--Rosewater', '#50fa7b');
+      document.documentElement.style.setProperty('--Flamingo', '#8be9fd');
+      document.documentElement.style.setProperty('--Pink', '#ff5555');
       document.documentElement.style.setProperty('--Mauve', '#bd93f9');
-      document.documentElement.style.setProperty('--Maroon', '#ff5555');
-      document.documentElement.style.setProperty('--Peach', '#ffb86c');
-      document.documentElement.style.setProperty('--Yellow', '#f1fa8c');
-      document.documentElement.style.setProperty('--Green', '#50fa7b');
-      document.documentElement.style.setProperty('--Teal', '#8be9fd');
-      document.documentElement.style.setProperty('--Sapphire', '#8be9fd');
-      document.documentElement.style.setProperty('--Lavender', '#bd93f9');
+      document.documentElement.style.setProperty('--Maroon', '#bd93f9');
+      document.documentElement.style.setProperty('--Peach', '#8be9fd');
+      document.documentElement.style.setProperty('--Yellow', '#ff5555');
+      document.documentElement.style.setProperty('--Green', '#ff79c6');
+      document.documentElement.style.setProperty('--Teal', '#ffb86c');
+      document.documentElement.style.setProperty('--Sapphire', '#f1fa8c');
+      document.documentElement.style.setProperty('--Lavender', '#ff79c6');
+      
 
     } else if (theme === 'atom') {
       document.documentElement.style.setProperty('--Rosewater', 'hsl(355, 65%, 65%)');
@@ -58,13 +61,13 @@ const Admin = ({ user }) => {
       document.documentElement.style.setProperty('--Rosewater', '#fb4934');
       document.documentElement.style.setProperty('--Flamingo', '#9d0006');
       document.documentElement.style.setProperty('--Pink', '#8f3f71');
-      document.documentElement.style.setProperty('--Mauve', '#b16286');
+      document.documentElement.style.setProperty('--Mauve', '#458588');
       document.documentElement.style.setProperty('--Maroon', '#cc241d');
       document.documentElement.style.setProperty('--Peach', '#d65d0e');
       document.documentElement.style.setProperty('--Yellow', '#d79921');
       document.documentElement.style.setProperty('--Green', '#98971a');
       document.documentElement.style.setProperty('--Teal', '#689d6a');
-      document.documentElement.style.setProperty('--Sapphire', '#458588');
+      document.documentElement.style.setProperty('--Sapphire', '#b16286');
       document.documentElement.style.setProperty('--Lavender', '#b8bb26');
 
     }
@@ -104,6 +107,7 @@ const Admin = ({ user }) => {
                       <option value="balcony.mp4">balcony</option>
                       <option value="house.mp4">house</option>
                       <option value="neon.mp4">neon</option>
+                      <option value="rakan.mp4">rakan</option>
                     </select>
 
                     <label className="text-center">Select theme</label>
