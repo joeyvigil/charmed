@@ -71,7 +71,6 @@ const Admin = ({ user }) => {
       </video>
 
       <div className="background">
-        {/* <div className='background' style={{backgroundImage: 'url("back1.webp")'}}> */}
         <div className="container">
           <div className="row">
 
@@ -81,23 +80,6 @@ const Admin = ({ user }) => {
                 <p className="text-center">
                   Manage users and settings from this panel.
                 </p>
-
-                    <label className="text-center">Select theme</label>
-                    <select 
-                      name="theme" 
-                      id="themeSelect" 
-                      className="form-select"
-                      onChange={() => setTheme(document.getElementById('themeSelect').value)}
-                      value={theme}
-                    >
-                      <option value="latte">Latte</option>
-                      <option value="dracula">Dracula</option>
-                      <option value="atom">Atom</option>
-                      <option value="gruvbox">Gruvbox</option>
-                    </select>
-                    
-                  
-                
 
               </div>
             </div>
