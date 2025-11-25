@@ -243,17 +243,17 @@ footer h5 {
 
 
 
-input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"], textarea[id="criteria"], textarea[id="sendText"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea[id="bio"], textarea[id="criteria"], textarea[id="sendText"], select[id="themeSelect"], select[id="videoSelect"] {
   color: var(--Base0);
   background-color: var(--Base6);
   border: 1px solid var(--Base3);
 }
 
-input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder, textarea[id="bio"]::placeholder, textarea[id="criteria"]::placeholder, textarea[id="sendText"]::placeholder {
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder, textarea[id="bio"]::placeholder, textarea[id="criteria"]::placeholder, textarea[id="sendText"]::placeholder, select[id="themeSelect"]::placeholder, select[id="videoSelect"]::placeholder {
   color: var(--Base4);
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea[id="bio"]:focus, textarea[id="criteria"]:focus, textarea[id="sendText"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea[id="bio"]:focus, textarea[id="criteria"]:focus, textarea[id="sendText"]:focus, select[id="themeSelect"]:focus, select[id="videoSelect"]:focus {
   outline: none;
   border: 1px solid var(--Sapphire);
   box-shadow: 0 0 5px var(--Sapphire);
@@ -262,7 +262,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 textarea[id="bio"] {
-  min-height: 250px;
+  min-height: 275px;
 }
 
 textarea[id="criteria"] {

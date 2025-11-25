@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Update = ({ user }) => {
@@ -19,6 +19,8 @@ const Update = ({ user }) => {
   const [tagline, setTagline] = React.useState("");
   const [latitude, setLatitude] = React.useState("999.9999");
   const [longitude, setLongitude] = React.useState("999.9999");
+  const [theme, setTheme] = React.useState(user?.theme || 'latte');
+  const [video, setVideo] = React.useState(user?.video || 'cat_rain.mp4');
 
   React.useEffect(() => {
     if (user) {
@@ -35,6 +37,8 @@ const Update = ({ user }) => {
       setTagline(user.tagline || "");
       setLatitude(user.latitude || "999.9999");
       setLongitude(user.longitude || "999.9999");
+      setTheme(user.theme || "latte");
+      setVideo(user.video || "cat_rain.mp4");
     }
   }, [user]);
 
@@ -85,14 +89,18 @@ const Update = ({ user }) => {
           in_game_name,
           tagline,
           latitude,
-          longitude
+          longitude,
+          theme,
+          video,
         })
       });
 
       if (response.ok) {
         const data = await response.json();
         console.log('Profile updated successfully:', data);
-        navigate('/profile');
+        alert("Profile updated successfully!");
+        navigate(`/profile`);
+
       } else {
         console.error('Error updating profile:', response.statusText);
         console.log(response);
@@ -102,10 +110,70 @@ const Update = ({ user }) => {
     updateProfile();
   };
 
+  useEffect(() => {
+    console.log('Applying theme:', theme);
+    if (theme === 'latte') {
+        document.documentElement.style.setProperty('--Rosewater', '#dc8a78');
+        document.documentElement.style.setProperty('--Flamingo', '#dd7878');
+        document.documentElement.style.setProperty('--Pink', '#ea76cb');
+        document.documentElement.style.setProperty('--Mauve', '#8839ef');
+        document.documentElement.style.setProperty('--Maroon', '#e64553');
+        document.documentElement.style.setProperty('--Peach', '#fe640b');
+        document.documentElement.style.setProperty('--Yellow', '#df8e1d');
+        document.documentElement.style.setProperty('--Green', '#40a02b');
+        document.documentElement.style.setProperty('--Teal', '#179299');
+        document.documentElement.style.setProperty('--Sapphire', '#209fb5');
+        document.documentElement.style.setProperty('--Lavender', '#7287fd');
+
+    } else if (theme === 'dracula') {
+        document.documentElement.style.setProperty('--Rosewater', '#50fa7b');
+        document.documentElement.style.setProperty('--Flamingo', '#8be9fd');
+        document.documentElement.style.setProperty('--Pink', '#ff5555');
+        document.documentElement.style.setProperty('--Mauve', '#bd93f9');
+        document.documentElement.style.setProperty('--Maroon', '#bd93f9');
+        document.documentElement.style.setProperty('--Peach', '#8be9fd');
+        document.documentElement.style.setProperty('--Yellow', '#ff5555');
+        document.documentElement.style.setProperty('--Green', '#ff79c6');
+        document.documentElement.style.setProperty('--Teal', '#ffb86c');
+        document.documentElement.style.setProperty('--Sapphire', '#f1fa8c');
+        document.documentElement.style.setProperty('--Lavender', '#ff79c6');
+
+    } else if (theme === 'atom') {
+        document.documentElement.style.setProperty('--Rosewater', 'hsl(355, 65%, 65%)');
+        document.documentElement.style.setProperty('--Flamingo', 'hsl(  5, 48%, 51%)');
+        document.documentElement.style.setProperty('--Pink', 'hsl(355, 65%, 65%)');
+        document.documentElement.style.setProperty('--Mauve', 'hsl(286, 60%, 67%)');
+        document.documentElement.style.setProperty('--Maroon', 'hsl(  5, 48%, 51%)');
+        document.documentElement.style.setProperty('--Peach', 'hsl( 29, 54%, 61%)');
+        document.documentElement.style.setProperty('--Yellow', 'hsl( 39, 67%, 69%)');
+        document.documentElement.style.setProperty('--Green', 'hsl( 95, 38%, 62%)');
+        document.documentElement.style.setProperty('--Teal', 'hsl(187, 47%, 55%)');
+        document.documentElement.style.setProperty('--Sapphire', 'hsl(187, 47%, 55%)');
+        document.documentElement.style.setProperty('--Lavender', 'hsl(207, 82%, 66%)');
+
+    } else if (theme === 'gruvbox') {
+        document.documentElement.style.setProperty('--Rosewater', '#fb4934');
+        document.documentElement.style.setProperty('--Flamingo', '#9d0006');
+        document.documentElement.style.setProperty('--Pink', '#8f3f71');
+        document.documentElement.style.setProperty('--Mauve', '#458588');
+        document.documentElement.style.setProperty('--Maroon', '#cc241d');
+        document.documentElement.style.setProperty('--Peach', '#d65d0e');
+        document.documentElement.style.setProperty('--Yellow', '#d79921');
+        document.documentElement.style.setProperty('--Green', '#98971a');
+        document.documentElement.style.setProperty('--Teal', '#689d6a');
+        document.documentElement.style.setProperty('--Sapphire', '#b16286');
+        document.documentElement.style.setProperty('--Lavender', '#b8bb26');
+    }
+    // reload video element to reflect changes
+    const videoElement = document.getElementById('myVideo2');
+    videoElement.load();
+
+    }, [theme, video]);
+
   return (
     <>
       <video autoPlay muted loop id="myVideo2">
-        <source src="cat_rain.mp4" type="video/mp4" />
+        <source src={video} type="video/mp4" />
       </video>
 
       <div className="background">
@@ -113,7 +181,7 @@ const Update = ({ user }) => {
           <div className="row">
             {user ? (
               <>
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-lg-4">
                   <div className="flex-container">
                     <h1 className="text-center">Update Profile</h1>
 
@@ -234,7 +302,7 @@ const Update = ({ user }) => {
                   </div>
                 </div>
 
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-lg-4">
                   <div className="flex-container">
                     <h1 className="text-center">Update Profile</h1>
 
@@ -312,11 +380,57 @@ const Update = ({ user }) => {
                       <label className="form-label">Bio</label>
                     </div>
 
-                    <button onClick={() => handleSave()} className="btn">
-                      Save Changes
-                    </button>
                   </div>
                 </div>
+
+                <div className="col-12 col-lg-4">
+                  <div className="flex-container">
+                    <h1 className="text-center">Theme and Background</h1>
+        
+                        {/* video select */}
+                      <div className='mb-2'>
+                        <select 
+                          id="videoSelect" 
+                          className="form-select"
+                          onChange={() => setVideo(document.getElementById('videoSelect').value)}
+                          value={video}
+                        >
+                          <option value="cat_rain.mp4">cat_rain</option>
+                          <option value="akira.mp4">akira</option>
+                          <option value="balcony.mp4">balcony</option>
+                          <option value="house.mp4">house</option>
+                          <option value="neon.mp4">neon</option>
+                          <option value="rakan.mp4">rakan</option>
+                        </select>
+                        <label className="form-label">Background</label>
+                      </div>
+
+                      {/* theme select */}
+                      <div className='mb-2'>
+                        <select 
+                          name="theme" 
+                          id="themeSelect" 
+                          className="form-select"
+                          onChange={() => setTheme(document.getElementById('themeSelect').value)}
+                          value={theme}
+                        >
+                          <option value="latte">Latte</option>
+                          <option value="dracula">Dracula</option>
+                          <option value="atom">Atom</option>
+                          <option value="gruvbox">Gruvbox</option>
+                        </select>
+                        <label className="form-label">Theme</label>
+                      </div>
+
+                      <div className='mb-2'>
+                        <button onClick={() => handleSave()} className="btn">
+                          Save Changes
+                        </button>
+                      </div>
+
+                  </div>
+                </div>
+
               </>
             ) : (
               <div className="col-12">

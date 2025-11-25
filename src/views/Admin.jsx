@@ -1,19 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Admin = ({ user }) => {
-  const [background, setBackground] = useState('house.mp4');
-  const [theme, setTheme] = useState('latte');
+  const [background, setBackground] = useState(user?.video || 'cat_rain.mp4');
+  const [theme, setTheme] = useState(user?.theme || 'latte');
 
-
-  const handleSubmit = () => {
-    console.log('Applying settings:', background, theme);
-
-    // Apply background change
-    const videoElement = document.getElementById('myVideo2');
-    videoElement.src = background;
-    videoElement.play();
-
-    // Apply theme change
+  useEffect(() => {
+    console.log('Applying theme:', theme);
     if (theme === 'latte') {
       document.documentElement.style.setProperty('--Rosewater', '#dc8a78');
       document.documentElement.style.setProperty('--Flamingo', '#dd7878');
@@ -28,8 +20,6 @@ const Admin = ({ user }) => {
       document.documentElement.style.setProperty('--Lavender', '#7287fd');
 
     } else if (theme === 'dracula') {
-
-      //randomize these colors
       document.documentElement.style.setProperty('--Rosewater', '#50fa7b');
       document.documentElement.style.setProperty('--Flamingo', '#8be9fd');
       document.documentElement.style.setProperty('--Pink', '#ff5555');
@@ -41,7 +31,6 @@ const Admin = ({ user }) => {
       document.documentElement.style.setProperty('--Teal', '#ffb86c');
       document.documentElement.style.setProperty('--Sapphire', '#f1fa8c');
       document.documentElement.style.setProperty('--Lavender', '#ff79c6');
-      
 
     } else if (theme === 'atom') {
       document.documentElement.style.setProperty('--Rosewater', 'hsl(355, 65%, 65%)');
@@ -56,8 +45,7 @@ const Admin = ({ user }) => {
       document.documentElement.style.setProperty('--Sapphire', 'hsl(187, 47%, 55%)');
       document.documentElement.style.setProperty('--Lavender', 'hsl(207, 82%, 66%)');
 
-    }
-    else if (theme === 'gruvbox') {
+    } else if (theme === 'gruvbox') {
       document.documentElement.style.setProperty('--Rosewater', '#fb4934');
       document.documentElement.style.setProperty('--Flamingo', '#9d0006');
       document.documentElement.style.setProperty('--Pink', '#8f3f71');
@@ -69,14 +57,17 @@ const Admin = ({ user }) => {
       document.documentElement.style.setProperty('--Teal', '#689d6a');
       document.documentElement.style.setProperty('--Sapphire', '#b16286');
       document.documentElement.style.setProperty('--Lavender', '#b8bb26');
-
     }
-  };
+
+  }, []);
+
+
+
 
   return (
     <>
       <video autoPlay muted loop id="myVideo2">
-        <source src='akira.mp4' type="video/mp4" />
+        <source src={background} type="video/mp4" />
       </video>
 
       <div className="background">
@@ -91,25 +82,6 @@ const Admin = ({ user }) => {
                   Manage users and settings from this panel.
                 </p>
 
-                
-                  <div className="mb-3">
-                    <label htmlFor="backgroundSelect" className="form-label">
-                      Select Background
-                    </label>
-                    <select 
-                      id="backgroundSelect" 
-                      className="form-select"
-                      onChange={() => setBackground(document.getElementById('backgroundSelect').value)}
-                      value={background}
-                    >
-                      <option value="cat_rain.mp4">cat_rain</option>
-                      <option value="akira.mp4">akira</option>
-                      <option value="balcony.mp4">balcony</option>
-                      <option value="house.mp4">house</option>
-                      <option value="neon.mp4">neon</option>
-                      <option value="rakan.mp4">rakan</option>
-                    </select>
-
                     <label className="text-center">Select theme</label>
                     <select 
                       name="theme" 
@@ -123,15 +95,8 @@ const Admin = ({ user }) => {
                       <option value="atom">Atom</option>
                       <option value="gruvbox">Gruvbox</option>
                     </select>
-
-
-                    <div className="text-center" onClick={() => handleSubmit()}>
-                      <button type="button" className="btn btn-primary">
-                        Apply Background + Theme
-                      </button>
-                    </div>
                     
-                  </div>
+                  
                 
 
               </div>
