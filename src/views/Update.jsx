@@ -99,7 +99,6 @@ const Update = ({ user }) => {
         const data = await response.json();
         console.log('Profile updated successfully:', data);
         alert("Profile updated successfully!");
-        navigate(`/profile`);
 
       } else {
         console.error('Error updating profile:', response.statusText);

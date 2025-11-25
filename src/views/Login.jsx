@@ -101,8 +101,11 @@ const Login = ( {user}) => {
         document.documentElement.style.setProperty('--Sapphire', '#b16286');
         document.documentElement.style.setProperty('--Lavender', '#b8bb26');
     }
+    // reload video element to reflect changes
+    const videoElement = document.getElementById('myVideo2');
+    videoElement.load();
 
-    }, []);
+    }, [theme, background]);
 
     
 
