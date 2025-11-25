@@ -167,7 +167,7 @@ const Update = ({ user }) => {
     const videoElement = document.getElementById('myVideo2');
     videoElement.load();
 
-    }, [navigate, theme, video]);
+    }, [theme, video]);
 
   return (
     <>

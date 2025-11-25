@@ -167,7 +167,7 @@ const Messages = ({ user }) => {
     const videoElement = document.getElementById('myVideo2');
     videoElement.load();
 
-    }, [navigate, theme, background]);
+    }, []);
 
   return (
     <>
