@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Admin = ({ user }) => {
+  const navigate = useNavigate();
   const [background, setBackground] = useState(user?.video || 'cat_rain.mp4');
   const [theme, setTheme] = useState(user?.theme || 'latte');
 
@@ -62,7 +64,7 @@ const Admin = ({ user }) => {
     const videoElement = document.getElementById('myVideo2');
     videoElement.load();
 
-    }, [theme, background]);
+    }, [navigate, theme, background]);
 
 
   return (

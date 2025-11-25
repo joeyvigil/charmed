@@ -185,7 +185,7 @@ const Matches = ({ user }) => {
     const videoElement = document.getElementById('myVideo2');
     videoElement.load();
 
-    }, [theme, background]);
+    }, [navigate, theme, background]);
 
   
   return (

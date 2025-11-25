@@ -7,6 +7,8 @@ const ProfileID = () => {
   const [user, setUser] = useState(null)
   const [puuid, setPuuid] = useState('')
   const [summonerData, setSummonerData] = useState(null)
+  const [background, setBackground] = useState('cat_rain.mp4');
+  const [theme, setTheme] = useState('latte');
   
   // TODO: Move to environment variable
   const riotApiKey = 'RGAPI-60155725-1674-4669-adb6-d0b93aff6ab8'
@@ -66,6 +68,10 @@ const ProfileID = () => {
       const data = await response.json()
       if (response.ok) {
         setUser(data)
+        setBackground(data.video || 'cat_rain.mp4');
+        setTheme(data.theme || 'latte');
+        const videoElement = document.getElementById('myVideo2');
+        videoElement.load();
       }
     }
 
@@ -75,7 +81,7 @@ const ProfileID = () => {
   return (
     <>
       <video autoPlay muted loop id="myVideo2">
-        <source src="cat_rain.mp4" type="video/mp4" />
+        <source src={background} type="video/mp4" />
       </video>
 
       <div className="background">

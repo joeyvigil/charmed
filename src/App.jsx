@@ -114,7 +114,7 @@ function App() {
 
     }
 
-  }, [navigate]);
+  }, [navigate, theme]);
 
 
   return (
