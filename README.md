@@ -38,7 +38,7 @@ This project uses the [Riot Games API](https://developer.riotgames.com/).
 
 
 ## Video Presentation
-markdown embed link to video presentation
+
 [![Video Presentation](http://img.youtube.com/vi/t3yqIoCSU44/0.jpg)](https://youtu.be/t3yqIoCSU44)
 
 
