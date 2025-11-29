@@ -11,38 +11,22 @@ This project uses the [Riot Games API](https://developer.riotgames.com/).
 ## MVP 
 
 ### Views
-- Home 🏠
-  - graphic intro
+- Login/Home 🏠
+  - Login with Riot account
+  - View app description
 
-- Profile 👤
-  - view and edit profile information
-  - add league accounts (most of info from api)
-  - Bio
+- Profile 🔍
+  - View and edit user profile
+  - add League of Legends username and tag (connect Riot account)
 
-- Update ⚙️
-  - change password
-  - change Riot ID
-  - change bio and other profile info
-  
-- Matches 💕
-    - view people near you
-    - search by criteria
+- Matches ❤️
+  - Filter by name, location, league name
+  - View user profiles
 
-- Chat 💬
-    - real-time messaging with other users
-    - view message history
+- Messages 💬
+  - View conversations
+  - Send and receive messages
 
-- Login / Register 🔐
-    - create account
-    - login to existing account
-
-- 404 ❌
-    - page not found
-    - redirect to home
-
-- Admin Dashboard 📊
-    - manage users
-  
 
 ## Tech Stack
 - **Frontend:** React, Bootstrap, CSS, HTML, JavaScript, JSX, react-router-dom
