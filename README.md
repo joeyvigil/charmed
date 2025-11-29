@@ -1,9 +1,11 @@
 # charmed
 League of legends dating
 
-https://joeyvigil.github.io/charmed/
+[Vercel www.charmed.lol](https://charmed-sand.vercel.app/)
 
-[www.charmed.lol](https://www.charmed.lol/)
+[GH Pages www.charmed.lol](https://www.charmed.lol/)
+
+https://joeyvigil.github.io/charmed/
 
 ## API
 This project uses the [Riot Games API](https://developer.riotgames.com/).
